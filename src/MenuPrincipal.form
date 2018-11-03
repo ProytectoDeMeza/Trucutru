@@ -77,13 +77,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="button2" min="-2" max="-2" attributes="0"/>
-                          <Component id="button3" min="-2" max="-2" attributes="0"/>
-                          <Component id="button4" min="-2" max="-2" attributes="0"/>
-                          <Component id="button5" min="-2" max="-2" attributes="0"/>
-                          <Component id="button6" min="-2" max="-2" attributes="0"/>
-                          <Component id="button7" min="-2" max="-2" attributes="0"/>
-                          <Component id="button8" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal1" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal2" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal4" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal5" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal6" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal7" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -113,30 +113,30 @@
                                                           <Group type="102" attributes="0">
                                                               <Group type="103" groupAlignment="1" attributes="0">
                                                                   <Group type="102" attributes="0">
-                                                                      <Component id="button2" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="opcionPrincipal1" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                                                   </Group>
-                                                                  <Component id="button3" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="opcionPrincipal2" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                                           </Group>
-                                                          <Component id="button4" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="opcionPrincipal3" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="button5" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="opcionPrincipal4" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="button6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="opcionPrincipal5" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="button7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="opcionPrincipal6" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="button8" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal7" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jLabel1" min="-2" pref="48" max="-2" attributes="0"/>
@@ -168,49 +168,52 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button2">
+    <Component class="java.awt.Button" name="opcionPrincipal1">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot; Datos de la Estructura&quot;" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcionPrincipal1ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="java.awt.Button" name="button3">
+    <Component class="java.awt.Button" name="opcionPrincipal2">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Generaci&#xf3;n de matriz de Rigidez&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button4">
+    <Component class="java.awt.Button" name="opcionPrincipal3">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Condiciones de Carga&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button5">
+    <Component class="java.awt.Button" name="opcionPrincipal4">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Calculo de Resultados&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button6">
+    <Component class="java.awt.Button" name="opcionPrincipal5">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Impresion&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button7">
+    <Component class="java.awt.Button" name="opcionPrincipal6">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Terminar&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button8">
+    <Component class="java.awt.Button" name="opcionPrincipal7">
       <Properties>
         <Property name="label" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;Iniciar Nuevo Proyecto&quot;" type="code"/>

@@ -13,16 +13,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Alexiyolokooooo
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-    File nombreProyecto,nombreDirectorio,F;
-    JFileChooser chooser;
-    int checker;
-    FileNameExtensionFilter filtro1,filtro2;
+    private File nombreProyecto,nombreDirectorio,F;
+    private JFileChooser chooser;
+    private int checker;
+    private FileNameExtensionFilter filtro1,filtro2;
+    public static MenuPrincipal menu;
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         
         initComponents();
+        this.setBounds(500, 300, this.getWidth(), this.getHeight());
         /*
         
          buttonGroup1.add(opcionPrincipal1);
@@ -50,13 +52,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        button2 = new java.awt.Button();
-        button3 = new java.awt.Button();
-        button4 = new java.awt.Button();
-        button5 = new java.awt.Button();
-        button6 = new java.awt.Button();
-        button7 = new java.awt.Button();
-        button8 = new java.awt.Button();
+        opcionPrincipal1 = new java.awt.Button();
+        opcionPrincipal2 = new java.awt.Button();
+        opcionPrincipal3 = new java.awt.Button();
+        opcionPrincipal4 = new java.awt.Button();
+        opcionPrincipal5 = new java.awt.Button();
+        opcionPrincipal6 = new java.awt.Button();
+        opcionPrincipal7 = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -74,19 +76,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("<html><p><p><p>De Clic sobre la opcion que desee: ");
 
-        button2.setLabel(" Datos de la Estructura");
+        opcionPrincipal1.setLabel(" Datos de la Estructura");
+        opcionPrincipal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionPrincipal1ActionPerformed(evt);
+            }
+        });
 
-        button3.setLabel("Generación de matriz de Rigidez");
+        opcionPrincipal2.setLabel("Generación de matriz de Rigidez");
 
-        button4.setLabel("Condiciones de Carga");
+        opcionPrincipal3.setLabel("Condiciones de Carga");
 
-        button5.setLabel("Calculo de Resultados");
+        opcionPrincipal4.setLabel("Calculo de Resultados");
 
-        button6.setLabel("Impresion");
+        opcionPrincipal5.setLabel("Impresion");
 
-        button7.setLabel("Terminar");
+        opcionPrincipal6.setLabel("Terminar");
 
-        button8.setLabel("Iniciar Nuevo Proyecto");
+        opcionPrincipal7.setLabel("Iniciar Nuevo Proyecto");
 
         jMenu1.setText("Archivo");
 
@@ -125,13 +132,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(opcionPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(opcionPrincipal7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -156,19 +163,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
                                                             .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                     .addGroup(layout.createSequentialGroup()
-                                                                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(opcionPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addGap(41, 41, 41))
-                                                                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                    .addComponent(opcionPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(41, 41, 41))
-                                                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(opcionPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addGap(41, 41, 41))
-                                                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(opcionPrincipal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(41, 41, 41))
-                                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(opcionPrincipal5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(41, 41, 41))
-                                    .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(opcionPrincipal6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(42, 42, 42))
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(opcionPrincipal7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -197,6 +204,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void opcionPrincipal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrincipal1ActionPerformed
+        new DatosDeLaEstructura().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_opcionPrincipal1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,20 +240,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                menu = new MenuPrincipal();
+                menu.setVisible(true);
                 
             }
         });
     }
 
+    public static MenuPrincipal getMenu() {
+        return menu;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button2;
-    private java.awt.Button button3;
-    private java.awt.Button button4;
-    private java.awt.Button button5;
-    private java.awt.Button button6;
-    private java.awt.Button button7;
-    private java.awt.Button button8;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -252,5 +262,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JRadioButton jRadioButton3;
+    private java.awt.Button opcionPrincipal1;
+    private java.awt.Button opcionPrincipal2;
+    private java.awt.Button opcionPrincipal3;
+    private java.awt.Button opcionPrincipal4;
+    private java.awt.Button opcionPrincipal5;
+    private java.awt.Button opcionPrincipal6;
+    private java.awt.Button opcionPrincipal7;
     // End of variables declaration//GEN-END:variables
 }
