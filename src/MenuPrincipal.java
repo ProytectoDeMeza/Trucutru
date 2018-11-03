@@ -4,19 +4,35 @@
  * and open the template in the editor.
  */
 import java.io.*;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alexiyolokooooo
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-    File nombreProyecto;
+    File nombreProyecto,nombreDirectorio,F;
+    JFileChooser chooser;
+    int checker;
+    
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
-        initComponents();
+        F= new File("C:/");
         setTitle("ANÁLISIS DE MARCOS PLANOS");
         nombreProyecto=null;
+        chooser=new JFileChooser();
+        chooser.setCurrentDirectory(null);
+        checker=chooser.showOpenDialog(null);
+        if(checker==JFileChooser.APPROVE_OPTION){
+            nombreProyecto= chooser.getSelectedFile();
+            nombreDirectorio= chooser.getCurrentDirectory();
+        }
+        initComponents();
+        
+        
          buttonGroup1.add(opcionPrincipal1);
          buttonGroup1.add(opcionPrincipal2);
          buttonGroup1.add(opcionPrincipal3);
@@ -55,7 +71,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("<html><p>Nombre de proyecto: "+nombreProyecto);
+        jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
 
         jLabel2.setText("<html>*****  OPCIONES :  *****<p><p>"
         );
@@ -198,6 +214,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuPrincipal().setVisible(true);
+                
             }
         });
     }

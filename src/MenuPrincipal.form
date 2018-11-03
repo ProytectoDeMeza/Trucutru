@@ -101,7 +101,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;&lt;html&gt;&lt;p&gt;Nombre de proyecto: &quot;+nombreProyecto" type="code"/>
+          <Connection code="&quot;&lt;html&gt;&lt;p&gt;Nombre de proyecto y directorio: &quot;+nombreProyecto" type="code"/>
         </Property>
       </Properties>
     </Component>
