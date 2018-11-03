@@ -15,6 +15,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        setTitle("ANÁLISIS DE MARCOS PLANOS");
     }
 
     /**
