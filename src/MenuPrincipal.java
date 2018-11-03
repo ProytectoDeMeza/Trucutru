@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.io.*;
 /**
  *
  * @author Alexiyolokooooo
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    File nombreProyecto;
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
         setTitle("ANÁLISIS DE MARCOS PLANOS");
+        nombreProyecto=null;
     }
 
     /**
@@ -27,17 +28,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("<html>Nombre de proyecto: "+nombreProyecto);
+
+        jLabel2.setText("<html>*****  OPCIONES :  *****<p><p><p><p>1) Datos de la Estructura"
+            + "<p><p><p>2) Generación de matriz de Rigidez"
+            + "<p><p><p>3) Condiciones de Carga"
+            + "<p><p><p>4) Calculo de Resultados"
+            + "<p><p><p>5) Impresion"
+            + "<p><p><p>6) Terminar"
+            + "<p><p><p>7) Iniciar Nuevo Proyecto"
+            + "<p><p><p>Presione el boton de la opcion que desee");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(412, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(137, 137, 137))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +106,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
