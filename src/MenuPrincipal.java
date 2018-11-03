@@ -6,6 +6,7 @@
 import java.io.*;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -15,7 +16,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     File nombreProyecto,nombreDirectorio,F;
     JFileChooser chooser;
     int checker;
-    
+    FileNameExtensionFilter filtro1,filtro2;
     /**
      * Creates new form MenuPrincipal
      */
@@ -24,6 +25,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setTitle("ANÁLISIS DE MARCOS PLANOS");
         nombreProyecto=null;
         chooser=new JFileChooser();
+        // aquí creas los filtros 
+        filtro1 = new FileNameExtensionFilter("Archivos DOCX", "docx"); 
+        filtro2 = new FileNameExtensionFilter("Archivos TXT", "txt"); 
+
+//Una vez creados los filtros, sólo debes asignárselos al cuadro de diálogo 
+        chooser.setFileFilter(filtro1); 
+        chooser.addChoosableFileFilter(filtro2); 
+
         chooser.setCurrentDirectory(null);
         checker=chooser.showOpenDialog(null);
         if(checker==JFileChooser.APPROVE_OPTION){
