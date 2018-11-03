@@ -17,13 +17,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         setTitle("ANÁLISIS DE MARCOS PLANOS");
         nombreProyecto=null;
-         buttonGroup1.add(jRadioButton1);
-         buttonGroup1.add(jRadioButton2);
-         buttonGroup1.add(jRadioButton4);
-         buttonGroup1.add(jRadioButton5);
-         buttonGroup1.add(jRadioButton6);
-         buttonGroup1.add(jRadioButton7);
-         buttonGroup1.add(jRadioButton8);
+         buttonGroup1.add(opcionPrincipal1);
+         buttonGroup1.add(opcionPrincipal2);
+         buttonGroup1.add(opcionPrincipal3);
+         buttonGroup1.add(opcionPrincipal4);
+         buttonGroup1.add(opcionPrincipal5);
+         buttonGroup1.add(opcionPrincipal6);
+         buttonGroup1.add(opcionPrincipal7);
          
          
     }
@@ -41,13 +41,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
+        opcionPrincipal1 = new javax.swing.JRadioButton();
+        opcionPrincipal2 = new javax.swing.JRadioButton();
+        opcionPrincipal3 = new javax.swing.JRadioButton();
+        opcionPrincipal4 = new javax.swing.JRadioButton();
+        opcionPrincipal5 = new javax.swing.JRadioButton();
+        opcionPrincipal6 = new javax.swing.JRadioButton();
+        opcionPrincipal7 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
 
@@ -60,23 +60,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel2.setText("<html>*****  OPCIONES :  *****<p><p>"
         );
 
-        jRadioButton1.setText(" Datos de la Estructura");
+        opcionPrincipal1.setText(" Datos de la Estructura");
 
-        jRadioButton2.setText("Generación de matriz de Rigidez");
+        opcionPrincipal2.setText("Generación de matriz de Rigidez");
 
-        jRadioButton4.setText("Condiciones de Carga");
+        opcionPrincipal3.setText("Condiciones de Carga");
 
-        jRadioButton5.setText("Calculo de Resultados");
+        opcionPrincipal4.setText("Calculo de Resultados");
 
-        jRadioButton6.setText("Impresion");
+        opcionPrincipal5.setText("Impresion");
 
-        jRadioButton7.setText("Terminar");
+        opcionPrincipal6.setText("Terminar");
 
-        jRadioButton8.setText("Iniciar Nuevo Proyecto");
+        opcionPrincipal7.setText("Iniciar Nuevo Proyecto");
 
-        jLabel3.setText("<html><p><p><p>Presione el boton de la opcion que desee\"");
+        jLabel3.setText("<html><p><p><p>Seleccione la opcion que desee luego precione 'Aceptar'");
 
         button1.setLabel("Aceptar");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,15 +93,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton8)
+                                .addComponent(opcionPrincipal7)
                                 .addGap(84, 84, 84)
                                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jRadioButton7)
-                            .addComponent(jRadioButton6)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton2))
+                            .addComponent(opcionPrincipal6)
+                            .addComponent(opcionPrincipal5)
+                            .addComponent(opcionPrincipal4)
+                            .addComponent(opcionPrincipal1)
+                            .addComponent(opcionPrincipal3)
+                            .addComponent(opcionPrincipal2))
                         .addGap(197, 280, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,20 +121,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jRadioButton1)
+                .addComponent(opcionPrincipal1)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton2)
+                .addComponent(opcionPrincipal2)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton4)
+                .addComponent(opcionPrincipal3)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton5)
+                .addComponent(opcionPrincipal4)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton6)
+                .addComponent(opcionPrincipal5)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton7)
+                .addComponent(opcionPrincipal6)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButton8)
+                    .addComponent(opcionPrincipal7)
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel3))
@@ -137,6 +142,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        if(opcionPrincipal1.isSelected()){
+            System.out.println("1");
+        }
+        if(opcionPrincipal2.isSelected()){
+            System.out.println("2");
+        }
+        if(opcionPrincipal3.isSelected()){
+            System.out.println("3");
+        }
+        if(opcionPrincipal4.isSelected()){
+            System.out.println("4");
+        }
+        if(opcionPrincipal5.isSelected()){
+            System.out.println("5");
+        }
+        if(opcionPrincipal6.isSelected()){
+            System.out.println("6");
+        }
+        if(opcionPrincipal7.isSelected()){
+            System.out.println("7");
+        }
+    }//GEN-LAST:event_button1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,13 +208,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton opcionPrincipal1;
+    private javax.swing.JRadioButton opcionPrincipal2;
+    private javax.swing.JRadioButton opcionPrincipal3;
+    private javax.swing.JRadioButton opcionPrincipal4;
+    private javax.swing.JRadioButton opcionPrincipal5;
+    private javax.swing.JRadioButton opcionPrincipal6;
+    private javax.swing.JRadioButton opcionPrincipal7;
     // End of variables declaration//GEN-END:variables
 }

@@ -38,16 +38,16 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                              <Component id="opcionPrincipal7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               <Component id="button1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal6" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal5" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal4" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal3" min="-2" max="-2" attributes="0"/>
+                          <Component id="opcionPrincipal2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="197" pref="280" max="32767" attributes="0"/>
                   </Group>
@@ -75,20 +75,20 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="12" max="32767" attributes="0"/>
-              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal4" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal5" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+              <Component id="opcionPrincipal6" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                  <Component id="opcionPrincipal7" min="-2" max="-2" attributes="0"/>
                   <Component id="button1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -112,37 +112,37 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal1">
       <Properties>
         <Property name="text" type="java.lang.String" value=" Datos de la Estructura"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Generaci&#xf3;n de matriz de Rigidez"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Condiciones de Carga"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calculo de Resultados"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Impresion"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Terminar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+    <Component class="javax.swing.JRadioButton" name="opcionPrincipal7">
       <Properties>
         <Property name="text" type="java.lang.String" value="Iniciar Nuevo Proyecto"/>
       </Properties>
@@ -150,7 +150,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;&lt;html&gt;&lt;p&gt;&lt;p&gt;&lt;p&gt;Presione el boton de la opcion que desee\&quot;&quot;" type="code"/>
+          <Connection code="&quot;&lt;html&gt;&lt;p&gt;&lt;p&gt;&lt;p&gt;Seleccione la opcion que desee luego precione &apos;Aceptar&apos;&quot;" type="code"/>
         </Property>
       </Properties>
     </Component>
@@ -160,6 +160,9 @@
           <Connection code="&quot;Aceptar&quot;" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
