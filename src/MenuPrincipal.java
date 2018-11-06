@@ -3,9 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
+
+import java.awt.Panel;
+import java.awt.TextField;
 import java.io.*;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
+
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -18,24 +26,72 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private int checker;
     private FileNameExtensionFilter filtro1,filtro2;
     public static MenuPrincipal menu;
+    ImageIcon imagen,boton;
+    
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         
-        initComponents();
-        this.setBounds(500, 300, this.getWidth(), this.getHeight());
-        /*
         
-         buttonGroup1.add(opcionPrincipal1);
-         buttonGroup1.add(opcionPrincipal2);
-         buttonGroup1.add(opcionPrincipal3);
-         buttonGroup1.add(opcionPrincipal4);
-         buttonGroup1.add(opcionPrincipal5);
-         buttonGroup1.add(opcionPrincipal6);
-         buttonGroup1.add(opcionPrincipal7);
-         
-         */
+        initComponents();
+         imagen= new ImageIcon("src/Imagenes/88.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 460, Image.SCALE_DEFAULT));
+        
+        this.setTitle("ANÁLISIS DE MARCOS PLANOS");
+        jLabel1.setText("<html><p>Nombre de proyecto y directorio: ");
+        
+        this.setBounds(500, 300, this.getWidth(), this.getHeight());
+        setLayout(new BorderLayout());
+        Panel q=new Panel( new GridLayout(1,2) );
+        
+            q.add(jLabel2);  
+            q.add(jLabel3); 
+        Panel p = new Panel( new GridLayout(7,1) );
+         p.add(opcionPrinc1);
+         p.add(opcionPrinc2);
+         p.add(opcionPrinc3);
+         p.add(opcionPrinc4);
+         p.add(opcionPrinc5);
+         p.add(opcionPrinc6);
+         p.add(opcionPrinc7);
+          add(p,BorderLayout.CENTER); 
+          add(q,BorderLayout.NORTH); 
+          add(jLabel1,BorderLayout.SOUTH);  
+          imagen= new ImageIcon("src/Imagenes/11.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc1.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/2.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc2.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/33.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc3.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/44.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc4.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/55.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc5.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/66.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc6.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/77.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionPrinc7.setIcon(boton);
+        
+        
+        
+        
+        // este metodo dimensiona y setea el tamanio exacto
+        // necesario para contener todos los componentes del Frame
+        
     }
 
     /**
@@ -52,13 +108,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        opcionPrincipal1 = new java.awt.Button();
-        opcionPrincipal2 = new java.awt.Button();
-        opcionPrincipal3 = new java.awt.Button();
-        opcionPrincipal4 = new java.awt.Button();
-        opcionPrincipal5 = new java.awt.Button();
-        opcionPrincipal6 = new java.awt.Button();
-        opcionPrincipal7 = new java.awt.Button();
+        opcionPrinc1 = new javax.swing.JButton();
+        opcionPrinc2 = new javax.swing.JButton();
+        opcionPrinc3 = new javax.swing.JButton();
+        opcionPrinc4 = new javax.swing.JButton();
+        opcionPrinc5 = new javax.swing.JButton();
+        opcionPrinc6 = new javax.swing.JButton();
+        opcionPrinc7 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -69,31 +125,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
+        jLabel1.setText("<html><p>Nombre de proyecto y directorio: ");
 
         jLabel2.setText("<html>*****  OPCIONES :  *****<p><p>"
         );
 
         jLabel3.setText("<html><p><p><p>De Clic sobre la opcion que desee: ");
 
-        opcionPrincipal1.setLabel(" Datos de la Estructura");
-        opcionPrincipal1.addActionListener(new java.awt.event.ActionListener() {
+        opcionPrinc1.setText(null);
+        opcionPrinc1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionPrincipal1ActionPerformed(evt);
+                opcionPrinc1ActionPerformed(evt);
             }
         });
 
-        opcionPrincipal2.setLabel("Generación de matriz de Rigidez");
+        opcionPrinc2.setText(null);
 
-        opcionPrincipal3.setLabel("Condiciones de Carga");
+        opcionPrinc3.setText(null);
 
-        opcionPrincipal4.setLabel("Calculo de Resultados");
+        opcionPrinc4.setText(null);
 
-        opcionPrincipal5.setLabel("Impresion");
-
-        opcionPrincipal6.setLabel("Terminar");
-
-        opcionPrincipal7.setLabel("Iniciar Nuevo Proyecto");
+        opcionPrinc6.setText(null);
 
         jMenu1.setText("Archivo");
 
@@ -120,64 +172,52 @@ public class MenuPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(70, 70, 70))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(opcionPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(opcionPrincipal7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(192, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(opcionPrinc7)
+                    .addComponent(opcionPrinc6)
+                    .addComponent(opcionPrinc5)
+                    .addComponent(opcionPrinc4)
+                    .addComponent(opcionPrinc3)
+                    .addComponent(opcionPrinc2)
+                    .addComponent(opcionPrinc1))
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2)
-                .addGap(8, 8, 8)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(8, 8, 8)
                         .addComponent(jLabel3)
+                        .addGap(40, 40, 40)
+                        .addComponent(opcionPrinc1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                    .addGroup(layout.createSequentialGroup()
-                                                                        .addComponent(opcionPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addGap(41, 41, 41))
-                                                                    .addComponent(opcionPrincipal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGap(41, 41, 41))
-                                                            .addComponent(opcionPrincipal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(41, 41, 41))
-                                                    .addComponent(opcionPrincipal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(41, 41, 41))
-                                            .addComponent(opcionPrincipal5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(41, 41, 41))
-                                    .addComponent(opcionPrincipal6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42))
-                            .addComponent(opcionPrincipal7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(opcionPrinc2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(opcionPrinc3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(opcionPrinc4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(opcionPrinc5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(opcionPrinc6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(opcionPrinc7)
+                        .addContainerGap(90, Short.MAX_VALUE))))
         );
 
         pack();
@@ -202,13 +242,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
             nombreProyecto= chooser.getSelectedFile();
             nombreDirectorio= chooser.getCurrentDirectory();
         }
-        jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
+        if(nombreProyecto==null){
+            jLabel1.setText("<html><p>Nombre de proyecto y directorio: ");
+        }else{
+            jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
+        }
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void opcionPrincipal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrincipal1ActionPerformed
+    private void opcionPrinc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc1ActionPerformed
+         
         new DatosDeLaEstructura().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_opcionPrincipal1ActionPerformed
+    }//GEN-LAST:event_opcionPrinc1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,12 +308,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JRadioButton jRadioButton3;
-    private java.awt.Button opcionPrincipal1;
-    private java.awt.Button opcionPrincipal2;
-    private java.awt.Button opcionPrincipal3;
-    private java.awt.Button opcionPrincipal4;
-    private java.awt.Button opcionPrincipal5;
-    private java.awt.Button opcionPrincipal6;
-    private java.awt.Button opcionPrincipal7;
+    private javax.swing.JButton opcionPrinc1;
+    private javax.swing.JButton opcionPrinc2;
+    private javax.swing.JButton opcionPrinc3;
+    private javax.swing.JButton opcionPrinc4;
+    private javax.swing.JButton opcionPrinc5;
+    private javax.swing.JButton opcionPrinc6;
+    private javax.swing.JButton opcionPrinc7;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,3 +1,10 @@
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Panel;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,13 +16,57 @@
  * @author Alexiyolokooooo
  */
 public class DatosDeLaEstructura extends javax.swing.JFrame {
-
+ImageIcon imagen,boton;
     /**
      * Creates new form DatosDeLaEstructura
      */
     public DatosDeLaEstructura() {
         initComponents();
         this.setBounds(500, 300, this.getWidth(), this.getHeight());
+        this.setTitle("DATOS DE LA ESTRUCTURA");
+        
+        
+        setLayout(new BorderLayout());
+        Panel q=new Panel( new GridLayout(1,2) );
+    
+            q.add(jLabel2);  
+            q.add(jLabel3); 
+        Panel p = new Panel( new GridLayout(7,1) );
+         p.add(opcionSecundaria1);
+         p.add(opcionSecundaria2);
+         p.add(opcionSecundaria3);
+         p.add(opcionSecundaria4);
+         p.add(opcionSecundaria5);
+         p.add(opcionSecundaria6);
+        
+          add(p,BorderLayout.CENTER); 
+          add(q,BorderLayout.NORTH); 
+          
+           imagen= new ImageIcon("src/Imagenes/99.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria1.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/10.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria2.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/12.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria3.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/13.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria4.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/14.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria5.setIcon(boton);
+        
+        imagen= new ImageIcon("src/Imagenes/15.png");
+         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        opcionSecundaria6.setIcon(boton);
+        
+            
     }
 
     /**
@@ -27,106 +78,82 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        opcionSecundaria4 = new java.awt.Button();
-        opcionSecundaria5 = new java.awt.Button();
-        opcionSecundaria6 = new java.awt.Button();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        opcionSecundaria1 = new java.awt.Button();
-        opcionSecundaria2 = new java.awt.Button();
-        opcionSecundaria3 = new java.awt.Button();
+        opcionSecundaria1 = new javax.swing.JButton();
+        opcionSecundaria2 = new javax.swing.JButton();
+        opcionSecundaria3 = new javax.swing.JButton();
+        opcionSecundaria4 = new javax.swing.JButton();
+        opcionSecundaria5 = new javax.swing.JButton();
+        opcionSecundaria6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        opcionSecundaria4.setLabel("Propiedades de miembros");
-
-        opcionSecundaria5.setLabel("Restricciones de nudos");
-
-        opcionSecundaria6.setLabel("Regreso al menú principal");
-        opcionSecundaria6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionSecundaria6ActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("<html>*****  OPCIONES :  *****<p><p>"
         );
 
         jLabel3.setText("<html><p><p><p>De Clic sobre la opcion que desee: ");
 
-        opcionSecundaria1.setLabel(" Parametros de la estructura");
-        opcionSecundaria1.addActionListener(new java.awt.event.ActionListener() {
+        opcionSecundaria1.setText(null);
+
+        opcionSecundaria6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionSecundaria1ActionPerformed(evt);
+                opcionSecundaria6ActionPerformed(evt);
             }
         });
-
-        opcionSecundaria2.setLabel("Coordenadas de nudos");
-
-        opcionSecundaria3.setLabel("Incidencias de Miembros");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 455, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(opcionSecundaria6)
+                    .addComponent(opcionSecundaria5)
+                    .addComponent(opcionSecundaria4)
+                    .addComponent(opcionSecundaria3)
+                    .addComponent(opcionSecundaria2)
+                    .addComponent(opcionSecundaria1))
+                .addContainerGap(295, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel2)
-                        .addComponent(opcionSecundaria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(opcionSecundaria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(opcionSecundaria3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(opcionSecundaria4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(opcionSecundaria5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(opcionSecundaria6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(opcionSecundaria1)
+                .addGap(18, 18, 18)
+                .addComponent(opcionSecundaria2)
+                .addGap(18, 18, 18)
+                .addComponent(opcionSecundaria3)
+                .addGap(18, 18, 18)
+                .addComponent(opcionSecundaria4)
+                .addGap(18, 18, 18)
+                .addComponent(opcionSecundaria5)
+                .addGap(18, 18, 18)
+                .addComponent(opcionSecundaria6)
+                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addComponent(jLabel2)
                     .addGap(8, 8, 8)
                     .addComponent(jLabel3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addComponent(opcionSecundaria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addGap(41, 41, 41))
-                                                        .addComponent(opcionSecundaria2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGap(41, 41, 41))
-                                                .addComponent(opcionSecundaria3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(41, 41, 41))
-                                        .addComponent(opcionSecundaria4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(41, 41, 41))
-                                .addComponent(opcionSecundaria5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(41, 41, 41))
-                        .addComponent(opcionSecundaria6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(13, Short.MAX_VALUE)))
+                    .addContainerGap(252, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void opcionSecundaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcionSecundaria1ActionPerformed
-
     private void opcionSecundaria6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria6ActionPerformed
-        MenuPrincipal.getMenu().setVisible(true);
+       MenuPrincipal.getMenu().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_opcionSecundaria6ActionPerformed
 
@@ -164,12 +191,12 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private java.awt.Button opcionSecundaria1;
-    private java.awt.Button opcionSecundaria2;
-    private java.awt.Button opcionSecundaria3;
-    private java.awt.Button opcionSecundaria4;
-    private java.awt.Button opcionSecundaria5;
-    private java.awt.Button opcionSecundaria6;
+    private javax.swing.JButton opcionSecundaria1;
+    private javax.swing.JButton opcionSecundaria2;
+    private javax.swing.JButton opcionSecundaria3;
+    private javax.swing.JButton opcionSecundaria4;
+    private javax.swing.JButton opcionSecundaria5;
+    private javax.swing.JButton opcionSecundaria6;
     // End of variables declaration//GEN-END:variables
 
     private static class RunnableImpl implements Runnable {
