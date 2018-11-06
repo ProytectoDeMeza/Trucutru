@@ -32,11 +32,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
-        
-        
         initComponents();
-         imagen= new ImageIcon("src/Imagenes/88.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 460, Image.SCALE_DEFAULT));
+        imagen= new ImageIcon("src/Imagenes/88.png");
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 460, Image.SCALE_DEFAULT));
         
         this.setTitle("ANÁLISIS DE MARCOS PLANOS");
         jLabel1.setText("<html><p>Nombre de proyecto y directorio: ");
@@ -45,50 +43,46 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setLayout(new BorderLayout());
         Panel q=new Panel( new GridLayout(1,2) );
         
-            q.add(jLabel2);  
-            q.add(jLabel3); 
+        q.add(jLabel2);  
+        q.add(jLabel3); 
         Panel p = new Panel( new GridLayout(7,1) );
-         p.add(opcionPrinc1);
-         p.add(opcionPrinc2);
-         p.add(opcionPrinc3);
-         p.add(opcionPrinc4);
-         p.add(opcionPrinc5);
-         p.add(opcionPrinc6);
-         p.add(opcionPrinc7);
-          add(p,BorderLayout.CENTER); 
-          add(q,BorderLayout.NORTH); 
-          add(jLabel1,BorderLayout.SOUTH);  
-          imagen= new ImageIcon("src/Imagenes/11.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        p.add(opcionPrinc1);
+        p.add(opcionPrinc2);
+        p.add(opcionPrinc3);
+        p.add(opcionPrinc4);
+        p.add(opcionPrinc5);
+        p.add(opcionPrinc6);
+        p.add(opcionPrinc7);
+        add(p,BorderLayout.CENTER); 
+        add(q,BorderLayout.NORTH); 
+        add(jLabel1,BorderLayout.SOUTH);  
+        imagen= new ImageIcon("src/Imagenes/11.png");
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc1.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/2.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc2.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/33.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc3.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/44.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc4.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/55.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc5.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/66.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc6.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/77.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc7.setIcon(boton);
-        
-        
-        
-        
         // este metodo dimensiona y setea el tamanio exacto
         // necesario para contener todos los componentes del Frame
         
