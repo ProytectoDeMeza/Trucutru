@@ -16,7 +16,8 @@ import javax.swing.ImageIcon;
  * @author Alexiyolokooooo
  */
 public class DatosDeLaEstructura extends javax.swing.JFrame {
-ImageIcon imagen,boton;
+    private ImageIcon imagen,boton;
+    private ParametrosDeLaEstructura parametros;
     /**
      * Creates new form DatosDeLaEstructura
      */
@@ -95,6 +96,11 @@ ImageIcon imagen,boton;
         jLabel3.setText("<html><p><p><p>De Clic sobre la opcion que desee: ");
 
         opcionSecundaria1.setText(null);
+        opcionSecundaria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSecundaria1ActionPerformed(evt);
+            }
+        });
 
         opcionSecundaria6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,8 +160,15 @@ ImageIcon imagen,boton;
 
     private void opcionSecundaria6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria6ActionPerformed
        MenuPrincipal.getMenu().setVisible(true);
+       parametros.setVisible(false);
         this.setVisible(false);
+        
     }//GEN-LAST:event_opcionSecundaria6ActionPerformed
+
+    private void opcionSecundaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria1ActionPerformed
+        parametros= new ParametrosDeLaEstructura();
+        parametros.setVisible(true);
+    }//GEN-LAST:event_opcionSecundaria1ActionPerformed
 
     /**
      * @param args the command line arguments
