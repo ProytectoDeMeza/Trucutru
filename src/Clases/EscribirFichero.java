@@ -7,77 +7,77 @@ public class EscribirFichero extends Estructura{
         super(m,nj,nr,nrj,e);
     }
 
-    public void escribir(Estructura Est){
+    public void escribir(){
         try{
             FileWriter fichero = new FileWriter("Ruta");
             fichero.write("Número de miembros:\r\n");
-            fichero.write(super.m + "\r\n");
+            fichero.write(m + "\r\n");
             fichero.write("Número de nudos:\r\n");
-            fichero.write(super.nj + "\r\n");
+            fichero.write(nj + "\r\n");
             fichero.write("Número de restricciones de apoyo:\r\n");
-            fichero.write(super.nr + "\r\n");
+            fichero.write(nr + "\r\n");
             fichero.write("Número de nudos restringidos:\r\n");
-            fichero.write(super.nrj + "\r\n");
+            fichero.write(nrj + "\r\n");
             fichero.write("Módulo de elasticidad:\r\n");
-            fichero.write(super.e + "\r\n");
+            fichero.write(e + "\r\n");
             fichero.write("Número grados de libertad:\r\n");
-            fichero.write(super.n + "\r\n");
+            fichero.write(n + "\r\n");
             fichero.write("Vectores coordenadas en un plano:\r\n");
             fichero.write("X: ");
-            for(int i=0;i<super.nj;i++){
-                fichero.write(super.x[i] + " ");
+            for(int i=0;i<nj;i++){
+                fichero.write(x[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Y: ");
-            for(int i=0;i<super.nj;i++){
-                fichero.write(super.y[i] + " ");
+            for(int i=0;i<nj;i++){
+                fichero.write(y[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Vectores nudo inicial y final:\r\n");
             fichero.write("jj: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.jj[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(jj[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("jk: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.jk[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(jk[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Propiedades de los miembros:\r\n");
             fichero.write("ax: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.ax[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(ax[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("iz: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.iz[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(iz[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("rl: ");
-            for(int i=0;i<3*(super.nj);i++){
-                fichero.write(super.rl[i] + " ");
+            for(int i=0;i<3*(nj);i++){
+                fichero.write(rl[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("crl: ");
-            for(int i=0;i<3*(super.nj);i++){
-                fichero.write(super.crl[i] + " ");
+            for(int i=0;i<3*(nj);i++){
+                fichero.write(crl[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("l: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.l[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(l[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("cx: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.cx[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(cx[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("cy: ");
-            for(int i=0;i<super.m;i++){
-                fichero.write(super.cy[i] + " ");
+            for(int i=0;i<m;i++){
+                fichero.write(cy[i] + " ");
             }
             fichero.write("\r\n");
         }catch(IOException e){
