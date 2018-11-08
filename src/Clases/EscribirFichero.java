@@ -7,9 +7,9 @@ public class EscribirFichero extends Estructura{
         super(m,nj,nr,nrj,e);
     }
 
-    public void escribir(){
+    public void escribir(File fich){
         try{
-            FileWriter fichero = new FileWriter("Ruta");
+            FileWriter fichero = new FileWriter(fich);
             fichero.write("Número de miembros:\r\n");
             fichero.write(m + "\r\n");
             fichero.write("Número de nudos:\r\n");
