@@ -3,10 +3,13 @@ import java.io.*;
 
 public class EscribirFichero extends Estructura{
     
+    //Constructor
     public EscribirFichero(int m,int nj,int nr,int nrj,int e){
         super(m,nj,nr,nrj,e);
     }
 
+    
+    //Metodo para escribir los datos del objeto en un archivo que se recibe como parametro
     public void escribir(File fich){
         try{
             FileWriter fichero = new FileWriter(fich);
@@ -24,59 +27,59 @@ public class EscribirFichero extends Estructura{
             fichero.write(n + "\r\n");
             fichero.write("Vectores coordenadas en un plano:\r\n");
             fichero.write("X: ");
-            for(int i=0;i<nj;i++){
+            for(int i=0;i<x.length;i++){
                 fichero.write(x[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Y: ");
-            for(int i=0;i<nj;i++){
+            for(int i=0;i<y.length;i++){
                 fichero.write(y[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Vectores nudo inicial y final:\r\n");
             fichero.write("jj: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<jj.length;i++){
                 fichero.write(jj[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("jk: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<jk.length;i++){
                 fichero.write(jk[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("Propiedades de los miembros:\r\n");
             fichero.write("ax: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<ax.length;i++){
                 fichero.write(ax[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("iz: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<iz.length;i++){
                 fichero.write(iz[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("rl: ");
-            for(int i=0;i<3*(nj);i++){
+            for(int i=0;i<rl.length;i++){
                 fichero.write(rl[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("crl: ");
-            for(int i=0;i<3*(nj);i++){
+            for(int i=0;i<crl.length;i++){
                 fichero.write(crl[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("l: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<l.length;i++){
                 fichero.write(l[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("cx: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<cx.length;i++){
                 fichero.write(cx[i] + " ");
             }
             fichero.write("\r\n");
             fichero.write("cy: ");
-            for(int i=0;i<m;i++){
+            for(int i=0;i<cy.length;i++){
                 fichero.write(cy[i] + " ");
             }
             fichero.write("\r\n");

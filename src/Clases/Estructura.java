@@ -55,7 +55,7 @@ public class Estructura {
             x[i]=0;
             y[i]=0;
         }
-        for(int i=0;i<m;i++){
+        for(int i=0;i<jj.length;i++){
             jj[i]=0;
             jk[i]=0;
             ax[i]=0;
@@ -64,7 +64,7 @@ public class Estructura {
             cx[i]=0;
             cy[i]=0;
         }
-        for(int i=0;i<3*nj;i++){
+        for(int i=0;i<rl.length;i++){
             rl[i]=0;
             crl[i]=0;
         }
@@ -166,7 +166,7 @@ public class Estructura {
             smd[5][5]=scm2;
             smd[2][5]=scm2/2;
             smd[5][2]=smd[2][5];
-            //imprimir: "Miembro #"+i
+            //imprimir: "Miembro #"+i/////////////////////
             if(rl[3*jj[i]-2]==0){
                 s[j1][j1]=s[j1][j1]+smd[1][1];
                 s[j2][j1]=s[j2][j1]+smd[2][1];

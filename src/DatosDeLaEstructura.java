@@ -30,41 +30,41 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
         setLayout(new BorderLayout());
         Panel q=new Panel( new GridLayout(1,2) );
     
-            q.add(jLabel2);  
-            q.add(jLabel3); 
+        q.add(jLabel2);  
+        q.add(jLabel3); 
         Panel p = new Panel( new GridLayout(7,1) );
-         p.add(opcionSecundaria1);
-         p.add(opcionSecundaria2);
-         p.add(opcionSecundaria3);
-         p.add(opcionSecundaria4);
-         p.add(opcionSecundaria5);
-         p.add(opcionSecundaria6);
-        
-          add(p,BorderLayout.CENTER); 
-          add(q,BorderLayout.NORTH); 
-          
-           imagen= new ImageIcon("src/Imagenes/99.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        p.add(opcionSecundaria1);
+        p.add(opcionSecundaria2);
+        p.add(opcionSecundaria3);
+        p.add(opcionSecundaria4);
+        p.add(opcionSecundaria5);
+        p.add(opcionSecundaria6);
+
+        add(p,BorderLayout.CENTER); 
+        add(q,BorderLayout.NORTH); 
+
+        imagen= new ImageIcon("src/Imagenes/99.png");
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria1.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/10.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria2.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/12.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria3.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/13.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria4.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/14.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria5.setIcon(boton);
         
         imagen= new ImageIcon("src/Imagenes/15.png");
-         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
+        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionSecundaria6.setIcon(boton);
         
             
@@ -159,8 +159,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void opcionSecundaria6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria6ActionPerformed
-       MenuPrincipal.getMenu().setVisible(true);
-       parametros.setVisible(false);
+        MenuPrincipal.getMenu().setVisible(true);
+        parametros.setVisible(false);
         this.setVisible(false);
         
     }//GEN-LAST:event_opcionSecundaria6ActionPerformed
@@ -219,7 +219,7 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
 
         @Override
         public void run() {
-            
+
         }
     }
 }
