@@ -160,14 +160,19 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
 
     private void opcionSecundaria6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria6ActionPerformed
         MenuPrincipal.getMenu().setVisible(true);
-        parametros.setVisible(false);
+        if(parametros.isVisible()==true){
+            parametros.setVisible(false);
+        }
+        
         this.setVisible(false);
         
     }//GEN-LAST:event_opcionSecundaria6ActionPerformed
 
     private void opcionSecundaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria1ActionPerformed
         parametros= new ParametrosDeLaEstructura();
-        parametros.setVisible(true);
+        if(parametros.isVisible()==false){
+            parametros.setVisible(true);
+        }
     }//GEN-LAST:event_opcionSecundaria1ActionPerformed
 
     /**
