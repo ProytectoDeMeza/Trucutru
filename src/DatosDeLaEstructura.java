@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Panel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -102,6 +103,18 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             }
         });
 
+        opcionSecundaria2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSecundaria2ActionPerformed(evt);
+            }
+        });
+
+        opcionSecundaria3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSecundaria3ActionPerformed(evt);
+            }
+        });
+
         opcionSecundaria6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcionSecundaria6ActionPerformed(evt);
@@ -160,20 +173,66 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
 
     private void opcionSecundaria6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria6ActionPerformed
         MenuPrincipal.getMenu().setVisible(true);
-        if(parametros.isVisible()==true){
+        try{
             parametros.setVisible(false);
+        }catch(Exception e){
+            
         }
-        
+
         this.setVisible(false);
         
     }//GEN-LAST:event_opcionSecundaria6ActionPerformed
 
     private void opcionSecundaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria1ActionPerformed
         parametros= new ParametrosDeLaEstructura();
-        if(parametros.isVisible()==false){
+        if(!parametros.isVisible()){
             parametros.setVisible(true);
         }
     }//GEN-LAST:event_opcionSecundaria1ActionPerformed
+
+    private void opcionSecundaria2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria2ActionPerformed
+        String coordenadas;
+        
+        int[][] xy=new int[10][2];
+        int pos;
+        
+        for(int i=0;i<10;i++){
+            try{
+                 coordenadas = (String) JOptionPane.showInputDialog("Coordenadas del nudo "+(i+1)+" \n por favor ingrese de la forma 'x,y':");
+                 pos=coordenadas.lastIndexOf(',');
+                 String[] subCoordenada=coordenadas.split(",");
+                 xy[i][0]=Integer.parseInt(subCoordenada[0]);
+                 
+                 xy[i][1]=Integer.parseInt(subCoordenada[1]);
+            }catch(Exception e){
+                i--;
+                JOptionPane.showMessageDialog(null, "Ingrese de nuevo porfavor");
+            }
+           
+        }
+    }//GEN-LAST:event_opcionSecundaria2ActionPerformed
+
+    private void opcionSecundaria3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria3ActionPerformed
+        String incidencias;
+        
+        int[][] xy=new int[10][2];
+        int pos;
+        
+        for(int i=0;i<10;i++){
+            try{
+                 incidencias = (String) JOptionPane.showInputDialog("Incidencias de Miembro "+(i+1)+" \n por favor ingrese de la forma 'nudoInicial,nudoFinal':");
+                 pos=incidencias.lastIndexOf(',');
+                 String[] subCoordenada=incidencias.split(",");
+                 xy[i][0]=Integer.parseInt(subCoordenada[0]);
+                 
+                 xy[i][1]=Integer.parseInt(subCoordenada[1]);
+            }catch(Exception e){
+                i--;
+                JOptionPane.showMessageDialog(null, "Ingrese de nuevo porfavor");
+            }
+           
+        }
+    }//GEN-LAST:event_opcionSecundaria3ActionPerformed
 
     /**
      * @param args the command line arguments
