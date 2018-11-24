@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.awt.Panel;
 import javax.swing.ImageIcon;
@@ -115,6 +116,18 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             }
         });
 
+        opcionSecundaria4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSecundaria4ActionPerformed(evt);
+            }
+        });
+
+        opcionSecundaria5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionSecundaria5ActionPerformed(evt);
+            }
+        });
+
         opcionSecundaria6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcionSecundaria6ActionPerformed(evt);
@@ -204,9 +217,10 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                  xy[i][0]=Integer.parseInt(subCoordenada[0]);
                  
                  xy[i][1]=Integer.parseInt(subCoordenada[1]);
+                 System.out.println(xy[i][0]+ " "+xy[i][1]);
             }catch(Exception e){
                 i--;
-                JOptionPane.showMessageDialog(null, "Ingrese de nuevo porfavor");
+                JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
             }
            
         }
@@ -216,23 +230,86 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
         String incidencias;
         
         int[][] xy=new int[10][2];
-        int pos;
+        
         
         for(int i=0;i<10;i++){
             try{
                  incidencias = (String) JOptionPane.showInputDialog("Incidencias de Miembro "+(i+1)+" \n por favor ingrese de la forma 'nudoInicial,nudoFinal':");
-                 pos=incidencias.lastIndexOf(',');
+                 
                  String[] subCoordenada=incidencias.split(",");
                  xy[i][0]=Integer.parseInt(subCoordenada[0]);
                  
                  xy[i][1]=Integer.parseInt(subCoordenada[1]);
+                 System.out.println(xy[i][0]+ " "+xy[i][1]);
             }catch(Exception e){
                 i--;
-                JOptionPane.showMessageDialog(null, "Ingrese de nuevo porfavor");
+                JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
             }
            
         }
     }//GEN-LAST:event_opcionSecundaria3ActionPerformed
+
+    private void opcionSecundaria4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria4ActionPerformed
+        String elementos,numElemTipo;
+        int numElem;
+        int[][] elem;
+        try{
+            x:
+            numElemTipo=(String) JOptionPane.showInputDialog("¿Cuántos grupos de elementos tipo hay?");
+                numElem = Integer.parseInt(numElemTipo);
+                elem= new int[numElem][4];
+            for(int i=0;i<numElem;i++){
+                try{
+                    elementos = (String) JOptionPane.showInputDialog("Grupo# "+(i+1)+" \n por favor ingrese de la forma 'elemInicial,elemFinal,area,momInercia':");
+                     
+                     String[] subElem=elementos.split(",");
+                     elem[i][0]=Integer.parseInt(subElem[0]);
+                     elem[i][1]=Integer.parseInt(subElem[1]);
+                     elem[i][2]=Integer.parseInt(subElem[2]);
+                     elem[i][3]=Integer.parseInt(subElem[3]);
+                     System.out.println(elem[i][0]+ " "+elem[i][1]+ " "+elem[i][2]+ " "+elem[i][3]);
+                }catch(Exception e){
+                    i--;
+                    JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+                }
+           
+            }
+        }catch(Exception e){
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_opcionSecundaria4ActionPerformed
+
+    private void opcionSecundaria5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria5ActionPerformed
+        String restricciones,numRestricciones;
+        int numRestric;
+        int[][] restricc;
+        try{
+            numRestricciones=(String) JOptionPane.showInputDialog("¿A cuantos nodos desea registrarle restricciones?");
+                numRestric = Integer.parseInt(numRestricciones);
+                restricc= new int[numRestric][4];
+            for(int i=0;i<numRestric;i++){
+                try{
+                     restricciones = (String) JOptionPane.showInputDialog("Grupo# "+(i+1)+" \n por favor ingrese de la forma 'numNodo,restriccionX,restriccionY,restriccionZ':");
+                     
+                     String[] subRestricc=restricciones.split(",");
+                     restricc[i][0]=Integer.parseInt(subRestricc[0]);
+                     restricc[i][1]=Integer.parseInt(subRestricc[1]);
+                     restricc[i][2]=Integer.parseInt(subRestricc[2]);
+                     restricc[i][3]=Integer.parseInt(subRestricc[3]);
+                     System.out.println(restricc[i][0]+ " "+restricc[i][1]+ " "+restricc[i][2]+ " "+restricc[i][3]);
+                }catch(Exception e){
+                    i--;
+                    JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+                }
+           
+            }
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_opcionSecundaria5ActionPerformed
 
     /**
      * @param args the command line arguments
