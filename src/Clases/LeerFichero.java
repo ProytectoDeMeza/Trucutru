@@ -8,7 +8,7 @@ public class LeerFichero extends Estructura{
     }
     
     public void leer(){
-        int vec[]=new int[6+8*nj+7*m];
+        int vec[]=new int[100];
         Scanner scanner=null;
         try{
             scanner=new Scanner(new FileReader("Nombre.txt"));
