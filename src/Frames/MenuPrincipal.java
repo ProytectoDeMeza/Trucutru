@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package Frames;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
-
 import java.awt.Panel;
 import java.awt.TextField;
 import java.io.*;
 import javax.swing.*;
-
+import Clases.*;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -27,7 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private FileNameExtensionFilter filtro1,filtro2;
     public static MenuPrincipal menu;
     ImageIcon imagen,boton;
-    
+    static EscribirFichero Calculos;
     /**
      * Creates new form MenuPrincipal
      */

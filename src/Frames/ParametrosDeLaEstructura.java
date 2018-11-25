@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+package Frames;
+import Clases.*;
 /**
  *
  * @author Alexiyolokooooo
@@ -126,6 +122,12 @@ public class ParametrosDeLaEstructura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int m=Integer.parseInt(jTextField1.getText());
+        int nj=Integer.parseInt(jTextField2.getText());
+        int nr=Integer.parseInt(jTextField3.getText());
+        int nrj=Integer.parseInt(jTextField4.getText());
+        int e=Integer.parseInt(jTextField5.getText());
+        MenuPrincipal.Calculos=new EscribirFichero(m,nj,nr,nrj,e);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
