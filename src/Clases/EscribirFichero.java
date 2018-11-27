@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EscribirFichero extends Estructura{
     
     //Constructor
-    public EscribirFichero(int m,int nj,int nr,int nrj,int e){
+    public EscribirFichero(int m,int nj,int nr,int nrj,long e){
         super(m,nj,nr,nrj,e);
     }
 
@@ -128,6 +128,9 @@ public class EscribirFichero extends Estructura{
             }
             fichero.write("\r\n");
             //
+            fichero.write("Condiciones de carga: ");
+            fichero.write("\r\n");
+            fichero.write(css+"\r\n");
             fichero.write("Acciones de métodos: ");
             fichero.write("\r\n");
             fichero.write("ae: ");
@@ -193,10 +196,10 @@ public class EscribirFichero extends Estructura{
             n=(int)vec[5];
             nlm=(int)vec[6];
             for(int j=0;j<nj;j++){
-                x[j]=(int)vec[7+j];
+                x[j]=vec[7+j];
             }
             for(int j=0;j<nj;j++){
-                y[j]=(int)vec[7+nj+j];
+                y[j]=vec[7+nj+j];
             }
             for(int j=0;j<m;j++){
                 jj[j]=(int)vec[7+2*nj+j];
@@ -205,10 +208,10 @@ public class EscribirFichero extends Estructura{
                 jk[j]=(int)vec[7+2*nj+m+j];
             }
             for(int j=0;j<m;j++){
-                ax[j]=(int)vec[7+2*nj+2*m+j];
+                ax[j]=vec[7+2*nj+2*m+j];
             }
             for(int j=0;j<m;j++){
-                iz[j]=(int)vec[7+2*nj+3*m+j];
+                iz[j]=vec[7+2*nj+3*m+j];
             }
             for(int j=0;j<3*nj;j++){
                 rl[j]=(int)vec[7+2*nj+4*m+j];

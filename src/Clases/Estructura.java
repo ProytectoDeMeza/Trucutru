@@ -12,7 +12,7 @@ public class Estructura {
     //Número de nudos restringidos
     protected int nrj;
     //Modulo de elasticidad
-    protected int e;
+    protected long e;
     //Número de grados de libertad
     protected int n;
     //no. elem.
@@ -36,6 +36,8 @@ public class Estructura {
     //matriz de rigidez
     protected double smd[][]=new double[6][6];
     protected double s[][];
+    //nombre condicion de carga
+    protected String css;
     //Acciones aplicadas en nudos(imprimir tres en tres)
     protected double a[];
     //aciones en extremos de miembros(de tres en tres)
@@ -49,10 +51,9 @@ public class Estructura {
     protected double d[];
     //Vector de acciones de extremo finales
     protected double am[][];
-    //nombre condicion de carga
-    protected String css;
+    
     //Constructores
-    public Estructura(int m,int nj,int nr,int nrj,int e){
+    public Estructura(int m,int nj,int nr,int nrj,long e){
         setM(m);
         setNj(nj);
         setNr(nr);
@@ -299,9 +300,9 @@ public class Estructura {
         }
         for(j=0;j<n+nr;j++){
             if(rl[j]!=0)
-                k=n+crl[j]-1;
+                k=n+crl[j];
             else
-                k=j-crl[j]-1;
+                k=j-crl[j];
             ac[k]=a[j]+ae[j];
         }
         System.arraycopy(ac, 0, d, 0, n-1);
@@ -409,11 +410,11 @@ public class Estructura {
         this.nrj = nrj;
     }
 
-    public int getE() {
+    public long getE() {
         return e;
     }
 
-    public void setE(int e) {
+    public void setE(long e) {
         this.e = e;
     }
 

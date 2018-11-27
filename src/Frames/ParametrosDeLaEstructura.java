@@ -126,7 +126,7 @@ public class ParametrosDeLaEstructura extends javax.swing.JFrame {
         int nj=Integer.parseInt(jTextField2.getText());
         int nr=Integer.parseInt(jTextField3.getText());
         int nrj=Integer.parseInt(jTextField4.getText());
-        int e=Integer.parseInt(jTextField5.getText());
+        long e=Long.parseLong(jTextField5.getText());
         MenuPrincipal.Calculos=new EscribirFichero(m,nj,nr,nrj,e);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
