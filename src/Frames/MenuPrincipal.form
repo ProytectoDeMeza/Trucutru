@@ -186,6 +186,9 @@
           <Connection code="null" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcionPrinc3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="opcionPrinc4">
       <Properties>
