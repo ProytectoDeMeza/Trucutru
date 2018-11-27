@@ -179,6 +179,9 @@
           <Connection code="null" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcionPrinc2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="opcionPrinc3">
       <Properties>
@@ -196,6 +199,9 @@
           <Connection code="null" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcionPrinc4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="opcionPrinc5">
       <Properties>

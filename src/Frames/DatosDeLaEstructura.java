@@ -205,8 +205,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     private void opcionSecundaria2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria2ActionPerformed
         String coordenadas;
         
-        int[] x=new int [MenuPrincipal.Calculos.getNj()];
-        int[] y=new int [MenuPrincipal.Calculos.getNj()];
+        double[] x=new double[MenuPrincipal.Calculos.getNj()];
+        double[] y=new double[MenuPrincipal.Calculos.getNj()];
         int pos;
         
         for(int i=0;i<MenuPrincipal.Calculos.getNj();i++){
@@ -214,9 +214,9 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                  coordenadas = (String) JOptionPane.showInputDialog("Coordenadas del nudo "+(i+1)+" \n por favor ingrese de la forma 'x,y':");
                  pos=coordenadas.lastIndexOf(',');
                  String[] subCoordenada=coordenadas.split(",");
-                 x[i]=Integer.parseInt(subCoordenada[0]);
+                 x[i]=Double.parseDouble(subCoordenada[0]);
                  
-                 y[i]=Integer.parseInt(subCoordenada[1]);
+                 y[i]=Double.parseDouble(subCoordenada[1]);
                  System.out.println(x[i]+ " "+y[i]);
             }catch(Exception e){
                 i--;
@@ -254,8 +254,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     private void opcionSecundaria4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria4ActionPerformed
         String elementos,numElemTipo;
         int numElem,ei,ef;
-        int[] ax=new int[MenuPrincipal.Calculos.getM()];
-        int[] iz=new int[MenuPrincipal.Calculos.getM()];
+        double[] ax=new double[MenuPrincipal.Calculos.getM()];
+        double[] iz=new double[MenuPrincipal.Calculos.getM()];
         try{
             x:
             numElemTipo=(String) JOptionPane.showInputDialog("¿Cuántos grupos de elementos tipo hay?");
@@ -266,8 +266,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                      
                      String[] subElem=elementos.split(",");
                      for(int j=Integer.parseInt(subElem[0])-1;j<Integer.parseInt(subElem[1]);j++){
-                        ax[i]=Integer.parseInt(subElem[2]);
-                        iz[i]=Integer.parseInt(subElem[3]);
+                        ax[i]=Double.parseDouble(subElem[2]);
+                        iz[i]=Double.parseDouble(subElem[3]);
                      }
                      System.out.println(subElem[0]+ " "+subElem[1]+ " "+subElem[2]+ " "+subElem[3]);
                 }catch(Exception e){

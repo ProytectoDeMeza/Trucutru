@@ -140,6 +140,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         opcionPrinc2.setText(null);
+        opcionPrinc2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionPrinc2ActionPerformed(evt);
+            }
+        });
 
         opcionPrinc3.setText(null);
         opcionPrinc3.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +154,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         opcionPrinc4.setText(null);
+        opcionPrinc4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionPrinc4ActionPerformed(evt);
+            }
+        });
 
         opcionPrinc6.setText(null);
 
@@ -291,76 +301,96 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void opcionPrinc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc3ActionPerformed
         String aux=(String) JOptionPane.showInputDialog("Número de condiciones de entrada \n por favor ingrese número de condiciones de entrada:");
         int NCC=Integer.parseInt(aux);
-        int []A=new int[3*Calculos.getNj()];
-        int [][]AML=new int[Calculos.getM()][6];
-        int CC[]=new int [80];
-        int NLM=0,NLJ=0,K=0,A1=0,A2=0,A3=0,AML1=0,AML2=0,AML3=0,AML4=0,AML5=0,AML6=0,I=0;
-        for(int CCA=0;CCA<NCC;CCA++){
-            aux=(String) JOptionPane.showInputDialog("Ingresa CC:");
-            CC[CCA]=Integer.parseInt(aux);
-            for(int i=0;i<Calculos.getM();i++){
-                for(int j=0;j<6;j++){
-                    AML[i][j]=0;
-                }
+        double []A=new double[3*Calculos.getNj()];
+        double [][]AML=new double[Calculos.getM()][6];
+        String CC;
+        double AML1=0,AML2=0,AML3=0,AML4=0,AML5=0,AML6=0,A1=0,A2=0,A3=0;
+        int NLM=0,NLJ=0,K=0,I=0;
+        //for(int CCA=0;CCA<NCC;CCA++){
+        CC=(String) JOptionPane.showInputDialog("Ingresa CC:");
+        for(int i=0;i<Calculos.getM();i++){
+            for(int j=0;j<6;j++){
+                AML[i][j]=0;
             }
-            for(int i=0;i<(3*Calculos.getNj());i++){
-                A[i]=0;
-            }
-             aux=(String) JOptionPane.showInputDialog("Numero de Nudos Cargados:");
-             NLJ=Integer.parseInt(aux);
-             aux=(String) JOptionPane.showInputDialog("Numero de Miembros Cargados:");
-             NLM=Integer.parseInt(aux);
-             if(NLJ>0){
-                 for(int j=0;j<NLJ;j++){
-                     aux=(String) JOptionPane.showInputDialog("Acciones Aplicadas en los Nudos(Ejes Globales)\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
-                     String[] acciones=aux.split(",");
-                     K=Integer.parseInt(acciones[0]);
-                     A1=Integer.parseInt(acciones[1]);
-                     A2=Integer.parseInt(acciones[2]);
-                     A3=Integer.parseInt(acciones[3]);
-                     A[(3*K+1)-3]=A1;
-                     A[(3*K+1)-2]=A2;
-                     A[(3*K+1)-1]=A3;
-                 }
-                 String text="";
-                 for(int j=1;j<=Calculos.getNj();j++){
-                     text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
-                 }
-                 JOptionPane.showMessageDialog(null, text);
-             }
-             if(NLM>0){
-                 for(int j=0;j<NLM;j++){
-                     I=0;
-                     aux=(String) JOptionPane.showInputDialog("Acciones en los extremos de miembros restringidos debidas a cargas(Ejes Locales)\n Ingresar numero de miembro:");
-                     
-                     I=Integer.parseInt(aux);
-                     aux=(String) JOptionPane.showInputDialog("Acciones de nudo inicial\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
-                     String[] acciones=aux.split(",");
-                     AML1=Integer.parseInt(acciones[0]);
-                     AML2=Integer.parseInt(acciones[1]);
-                     AML3=Integer.parseInt(acciones[2]);
-                 
-                     aux=(String) JOptionPane.showInputDialog("Acciones de nudo final\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
-                     acciones=aux.split(",");
-                     AML4=Integer.parseInt(acciones[0]);
-                     AML5=Integer.parseInt(acciones[1]);
-                     AML6=Integer.parseInt(acciones[2]);
-                     
-                     AML[I][0]=AML1;
-                     AML[I][1]=AML2;
-                     AML[I][2]=AML3;
-                     AML[I][3]=AML4;
-                     AML[I][4]=AML5;
-                     AML[I][5]=AML6;
-                 }
-                 String text="";
-                 for(int j=1;j<=Calculos.getNj();j++){
-                     text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
-                 }
-                 JOptionPane.showMessageDialog(null, text);
-             }
         }
+        for(int i=0;i<(3*Calculos.getNj());i++){
+            A[i]=0;
+        }
+         aux=(String) JOptionPane.showInputDialog("Numero de Nudos Cargados:");
+         NLJ=Integer.parseInt(aux);
+         aux=(String) JOptionPane.showInputDialog("Numero de Miembros Cargados:");
+         NLM=Integer.parseInt(aux);
+         if(NLJ>0){
+             for(int j=0;j<NLJ;j++){
+                 aux=(String) JOptionPane.showInputDialog("Acciones Aplicadas en los Nudos(Ejes Globales)\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
+                 String[] acciones=aux.split(",");
+                 K=Integer.parseInt(acciones[0]);
+                 A1=Double.parseDouble(acciones[1]);
+                 A2=Double.parseDouble(acciones[2]);
+                 A3=Double.parseDouble(acciones[3]);
+                 A[(3*K+1)-3]=A1;
+                 A[(3*K+1)-2]=A2;
+                 A[(3*K+1)-1]=A3;
+             }
+             String text="";
+             for(int j=1;j<=Calculos.getNj();j++){
+                 text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
+             }
+             JOptionPane.showMessageDialog(null, text);
+         }
+         if(NLM>0){
+             for(int j=0;j<NLM;j++){
+                 I=0;
+                 aux=(String) JOptionPane.showInputDialog("Acciones en los extremos de miembros restringidos debidas a cargas(Ejes Locales)\n Ingresar numero de miembro:");
+
+                 I=Integer.parseInt(aux);
+                 aux=(String) JOptionPane.showInputDialog("Acciones de nudo inicial\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
+                 String[] acciones=aux.split(",");
+                 AML1=Double.parseDouble(acciones[0]);
+                 AML2=Double.parseDouble(acciones[1]);
+                 AML3=Double.parseDouble(acciones[2]);
+
+                 aux=(String) JOptionPane.showInputDialog("Acciones de nudo final\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
+                 acciones=aux.split(",");
+                 AML4=Double.parseDouble(acciones[0]);
+                 AML5=Double.parseDouble(acciones[1]);
+                 AML6=Double.parseDouble(acciones[2]);
+
+                 AML[I][0]=AML1;
+                 AML[I][1]=AML2;
+                 AML[I][2]=AML3;
+                 AML[I][3]=AML4;
+                 AML[I][4]=AML5;
+                 AML[I][5]=AML6;
+             }
+             String text="";
+             for(int j=1;j<=Calculos.getNj();j++){
+                 text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
+             }
+             JOptionPane.showMessageDialog(null, text);
+         }
+        //}
+        Calculos.setA(A);
+        Calculos.setAml(AML);
+        Calculos.setNlm(NLM);
     }//GEN-LAST:event_opcionPrinc3ActionPerformed
+
+    private void opcionPrinc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc2ActionPerformed
+        // TODO add your handling code here:
+        Calculos.generarMatrizRigidez();
+    }//GEN-LAST:event_opcionPrinc2ActionPerformed
+
+    private void opcionPrinc4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc4ActionPerformed
+        // TODO add your handling code here:
+        Calculos.calculosFinales();
+        double[][] am=new double[Calculos.getM()][6];
+        am=Calculos.getAm();
+        for(int i=0;i<6;i++){
+            for(int j=0;j<Calculos.getM();j++){
+                System.out.println(am[i][j]+" ");
+            }
+        }
+    }//GEN-LAST:event_opcionPrinc4ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -18,14 +18,14 @@ public class Estructura {
     //no. elem.
     protected int nlm;
     //Vectores coordenadas en un plano     Dimensión =nj
-    protected int x[];
-    protected int y[];
+    protected double x[];
+    protected double y[];
     //Vectores nudo inicial y final     Dimensión =m
     protected int jj[];
     protected int jk[];
     //Propiedades de los miembros   Dimensión =m
-    protected int ax[];
-    protected int iz[];
+    protected double ax[];
+    protected double iz[];
     //Dimensión =3*nj
     protected int rl[];
     protected int crl[];
@@ -49,8 +49,8 @@ public class Estructura {
     protected double d[];
     //Vector de acciones de extremo finales
     protected double am[][];
-    
-    protected double css[]=new double[80];
+    //nombre condicion de carga
+    protected String css;
     //Constructores
     public Estructura(int m,int nj,int nr,int nrj,int e){
         setM(m);
@@ -60,12 +60,12 @@ public class Estructura {
         setE(e);
         setN(0);
         setNlm(0);
-        x=new int[nj];
-        y=new int[nj];
+        x=new double[nj];
+        y=new double[nj];
         jj=new int[m];
         jk=new int[m];
-        ax=new int[m];
-        iz=new int[m];
+        ax=new double[m];
+        iz=new double[m];
         l=new double[m];
         cx=new double[m];
         cy=new double[m];
@@ -112,8 +112,8 @@ public class Estructura {
     //métodos
     //Generación Matriz de rigidez
     public void generarMatrizRigidez(){
-        int im;
-        int xcl,ycl,jp,jm;
+        int im,jp,jm;
+        double xcl,ycl;
         int k1,k2,k3,j1,j2,j3;
         double scm1,scm2,scm3,scm4,xx;
         for(int i=0;i<6;i++){
@@ -425,22 +425,6 @@ public class Estructura {
         this.n = n;
     }
 
-    public int[] getX() {
-        return x;
-    }
-
-    public void setX(int[] x) {
-        this.x = x;
-    }
-
-    public int[] getY() {
-        return y;
-    }
-
-    public void setY(int[] y) {
-        this.y = y;
-    }
-
     public int[] getJj() {
         return jj;
     }
@@ -455,22 +439,6 @@ public class Estructura {
 
     public void setJk(int[] jk) {
         this.jk = jk;
-    }
-
-    public int[] getAx() {
-        return ax;
-    }
-
-    public void setAx(int[] ax) {
-        this.ax = ax;
-    }
-
-    public int[] getIz() {
-        return iz;
-    }
-
-    public void setIz(int[] iz) {
-        this.iz = iz;
     }
 
     public int[] getRl() {
@@ -593,12 +561,44 @@ public class Estructura {
         this.am = am;
     }
 
-    public double[] getCss() {
+    public String getCss() {
         return css;
     }
 
-    public void setCss(double[] css) {
+    public void setCss(String css) {
         this.css = css;
+    }
+
+    public double[] getX() {
+        return x;
+    }
+
+    public void setX(double[] x) {
+        this.x = x;
+    }
+
+    public double[] getY() {
+        return y;
+    }
+
+    public void setY(double[] y) {
+        this.y = y;
+    }
+
+    public double[] getAx() {
+        return ax;
+    }
+
+    public void setAx(double[] ax) {
+        this.ax = ax;
+    }
+
+    public double[] getIz() {
+        return iz;
+    }
+
+    public void setIz(double[] iz) {
+        this.iz = iz;
     }
     
     
