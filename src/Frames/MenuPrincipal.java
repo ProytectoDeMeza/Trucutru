@@ -12,6 +12,7 @@ import java.awt.TextField;
 import java.io.*;
 import javax.swing.*;
 import Clases.*;
+import java.awt.event.ActionEvent;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -173,6 +174,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Guardar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Guardar como...");
@@ -266,12 +272,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
             nombreProyecto= chooser.getSelectedFile();
             nombreDirectorio= chooser.getCurrentDirectory();
         }
+        try{
+            Calculos.leer(nombreProyecto);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Archivo no compatible");
+            nombreProyecto=null;
+        }
         if(nombreProyecto==null){
             jLabel1.setText("<html><p>Nombre de proyecto y directorio: ");
         }else{
             jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
         }
-        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void opcionPrinc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc1ActionPerformed
@@ -281,6 +292,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_opcionPrinc1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        try{
+            String nom=JOptionPane.showInputDialog("Ingresa el nombre del archivo:");
+            nombreProyecto=new File("src/Archivos/"+nom+".txt");
+            nombreProyecto.createNewFile();
+            //Calculos.escribir(nombreProyecto);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+        }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -391,6 +410,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_opcionPrinc7ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        if(nombreProyecto==null){
+        }
+        {
+            try{
+                Calculos.escribir(nombreProyecto);
+            }catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+            }
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

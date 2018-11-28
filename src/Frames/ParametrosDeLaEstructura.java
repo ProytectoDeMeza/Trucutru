@@ -1,5 +1,6 @@
 package Frames;
 import Clases.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Alexiyolokooooo
@@ -122,13 +123,21 @@ public class ParametrosDeLaEstructura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int m=Integer.parseInt(jTextField1.getText());
-        int nj=Integer.parseInt(jTextField2.getText());
-        int nr=Integer.parseInt(jTextField3.getText());
-        int nrj=Integer.parseInt(jTextField4.getText());
-        int e=Integer.parseInt(jTextField5.getText());
-        MenuPrincipal.Calculos=new EscribirFichero(m,nj,nr,nrj,e);
-        this.setVisible(false);
+        try{
+            int m=Integer.parseInt(jTextField1.getText());
+            int nj=Integer.parseInt(jTextField2.getText());
+            int nr=Integer.parseInt(jTextField3.getText());
+            int nrj=Integer.parseInt(jTextField4.getText());
+            int e=Integer.parseInt(jTextField5.getText());
+            if(m==0||nj==0||nr==0||nrj==0||e==0){
+                Exception ex=new Exception();
+                throw(ex);
+            }
+            MenuPrincipal.Calculos=new EscribirFichero(m,nj,nr,nrj,e);
+            this.setVisible(false);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

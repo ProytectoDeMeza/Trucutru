@@ -59,8 +59,8 @@ public class Estructura {
         setNr(nr);
         setNrj(nrj);
         setE(e);
-        setN(0);
-        setNlm(0);
+        setN(1);
+        setNlm(1);
         x=new double[nj];
         y=new double[nj];
         jj=new int[m];

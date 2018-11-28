@@ -174,11 +174,11 @@ public class EscribirFichero extends Estructura{
         }
         
     }
-    public void leer(){
+    public void leer(File fich){
         double vec[]=new double[1000];
         Scanner scanner=null;
         try{
-            scanner=new Scanner(new FileReader("Nombre.txt"));
+            scanner=new Scanner(new FileReader(fich));
             int i=0;
             while(scanner.hasNext()){
                 String palabra = scanner.next();
@@ -195,6 +195,25 @@ public class EscribirFichero extends Estructura{
             e=(int)vec[4];
             n=(int)vec[5];
             nlm=(int)vec[6];
+            x=new double[nj];
+            y=new double[nj];
+            jj=new int[m];
+            jk=new int[m];
+            ax=new double[m];
+            iz=new double[m];
+            l=new double[m];
+            cx=new double[m];
+            cy=new double[m];
+            rl=new int[3*nj];
+            crl=new int[3*nj];
+            s=new double[3*nj][3*nj];
+            a=new double[3*nj];
+            aml=new double[m][6];
+            ae=new double[3*nj];
+            ac=new double[3*nj];
+            d=new double[3*nj];
+            ar=new double[3*nj];
+            am=new double[m][6];
             for(int j=0;j<nj;j++){
                 x[j]=vec[7+j];
             }
