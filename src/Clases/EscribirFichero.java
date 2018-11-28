@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EscribirFichero extends Estructura{
     
     //Constructor
-    public EscribirFichero(int m,int nj,int nr,int nrj,long e){
+    public EscribirFichero(int m,int nj,int nr,int nrj,int e){
         super(m,nj,nr,nrj,e);
     }
 
@@ -105,6 +105,7 @@ public class EscribirFichero extends Estructura{
                 }
                 fichero.write("\r\n");
             }
+            fichero.write("Nombre condicion de carga: "+css);
             fichero.write("\r\n");
             fichero.write("Acciones aplicadas en nudos: ");
             fichero.write("\r\n");

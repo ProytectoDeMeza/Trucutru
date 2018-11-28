@@ -12,7 +12,7 @@ public class Estructura {
     //Número de nudos restringidos
     protected int nrj;
     //Modulo de elasticidad
-    protected long e;
+    protected int e;
     //Número de grados de libertad
     protected int n;
     //no. elem.
@@ -53,7 +53,7 @@ public class Estructura {
     protected double am[][];
     
     //Constructores
-    public Estructura(int m,int nj,int nr,int nrj,long e){
+    public Estructura(int m,int nj,int nr,int nrj,int e){
         setM(m);
         setNj(nj);
         setNr(nr);
@@ -414,7 +414,7 @@ public class Estructura {
         return e;
     }
 
-    public void setE(long e) {
+    public void setE(int e) {
         this.e = e;
     }
 
