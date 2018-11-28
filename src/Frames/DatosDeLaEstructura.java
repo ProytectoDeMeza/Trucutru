@@ -203,60 +203,68 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
     }//GEN-LAST:event_opcionSecundaria1ActionPerformed
 
     private void opcionSecundaria2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria2ActionPerformed
-        String coordenadas;
-        
-        double[] x=new double[MenuPrincipal.Calculos.getNj()];
-        double[] y=new double[MenuPrincipal.Calculos.getNj()];
-        int pos;
-        
-        for(int i=0;i<MenuPrincipal.Calculos.getNj();i++){
-            try{
-                 coordenadas = (String) JOptionPane.showInputDialog("Coordenadas del nudo "+(i+1)+" \n por favor ingrese de la forma 'x,y':");
-                 pos=coordenadas.lastIndexOf(',');
-                 String[] subCoordenada=coordenadas.split(",");
-                 x[i]=Double.parseDouble(subCoordenada[0]);
-                 
-                 y[i]=Double.parseDouble(subCoordenada[1]);
-                 System.out.println(x[i]+ " "+y[i]);
-            }catch(Exception e){
-                i--;
-                JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+        try{    
+            String coordenadas;
+
+            double[] x=new double[MenuPrincipal.Calculos.getNj()];
+            double[] y=new double[MenuPrincipal.Calculos.getNj()];
+            int pos;
+
+            for(int i=0;i<MenuPrincipal.Calculos.getNj();i++){
+                try{
+                     coordenadas = (String) JOptionPane.showInputDialog("Coordenadas del nudo "+(i+1)+" \n por favor ingrese de la forma 'x,y':");
+                     pos=coordenadas.lastIndexOf(',');
+                     String[] subCoordenada=coordenadas.split(",");
+                     x[i]=Double.parseDouble(subCoordenada[0]);
+
+                     y[i]=Double.parseDouble(subCoordenada[1]);
+                     System.out.println(x[i]+ " "+y[i]);
+                }catch(Exception e){
+                    i--;
+                    JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+                }
+            MenuPrincipal.Calculos.setX(x);
+            MenuPrincipal.Calculos.setY(y);
             }
-        MenuPrincipal.Calculos.setX(x);
-        MenuPrincipal.Calculos.setY(y);
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
     }//GEN-LAST:event_opcionSecundaria2ActionPerformed
 
     private void opcionSecundaria3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria3ActionPerformed
-        String incidencias;
-        
-        int[] jj=new int[MenuPrincipal.Calculos.getM()];
-        int[] jk=new int[MenuPrincipal.Calculos.getM()];
-        
-        for(int i=0;i<MenuPrincipal.Calculos.getM();i++){
-            try{
-                 incidencias = (String) JOptionPane.showInputDialog("Incidencias de Miembro "+(i+1)+" \n por favor ingrese de la forma 'nudoInicial,nudoFinal':");
-                 
-                 String[] subCoordenada=incidencias.split(",");
-                 jj[i]=Integer.parseInt(subCoordenada[0]);
-                 
-                 jk[i]=Integer.parseInt(subCoordenada[1]);
-                 System.out.println(jj[i]+ " "+jk[i]);
-            }catch(Exception e){
-                i--;
-                JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+        try{
+            String incidencias;
+
+            int[] jj=new int[MenuPrincipal.Calculos.getM()];
+            int[] jk=new int[MenuPrincipal.Calculos.getM()];
+
+            for(int i=0;i<MenuPrincipal.Calculos.getM();i++){
+                try{
+                     incidencias = (String) JOptionPane.showInputDialog("Incidencias de Miembro "+(i+1)+" \n por favor ingrese de la forma 'nudoInicial,nudoFinal':");
+
+                     String[] subCoordenada=incidencias.split(",");
+                     jj[i]=Integer.parseInt(subCoordenada[0]);
+
+                     jk[i]=Integer.parseInt(subCoordenada[1]);
+                     System.out.println(jj[i]+ " "+jk[i]);
+                }catch(Exception e){
+                    i--;
+                    JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
+                }
             }
+            MenuPrincipal.Calculos.setJj(jj);
+            MenuPrincipal.Calculos.setJk(jk);
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
-        MenuPrincipal.Calculos.setJj(jj);
-        MenuPrincipal.Calculos.setJk(jk);
     }//GEN-LAST:event_opcionSecundaria3ActionPerformed
 
     private void opcionSecundaria4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria4ActionPerformed
-        String elementos,numElemTipo;
-        int numElem,ei,ef;
-        double[] ax=new double[MenuPrincipal.Calculos.getM()];
-        double[] iz=new double[MenuPrincipal.Calculos.getM()];
         try{
+            String elementos,numElemTipo;
+            int numElem,ei,ef;
+            double[] ax=new double[MenuPrincipal.Calculos.getM()];
+            double[] iz=new double[MenuPrincipal.Calculos.getM()];
             x:
             numElemTipo=(String) JOptionPane.showInputDialog("¿Cuántos grupos de elementos tipo hay?");
                 numElem = Integer.parseInt(numElemTipo);
@@ -276,20 +284,19 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                 }
            
             }
-        }catch(Exception e){
-            
+            MenuPrincipal.Calculos.setAx(ax);
+            MenuPrincipal.Calculos.setIz(iz);
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
-        MenuPrincipal.Calculos.setAx(ax);
-        MenuPrincipal.Calculos.setIz(iz);
     }//GEN-LAST:event_opcionSecundaria4ActionPerformed
 
     private void opcionSecundaria5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionSecundaria5ActionPerformed
-        String restricciones,numRestricciones;
-        int numRestric;
-        int[] rl=new int[3*MenuPrincipal.Calculos.getNj()];
-        int[] crl=new int[3*MenuPrincipal.Calculos.getNj()];
-        
         try{
+            String restricciones,numRestricciones;
+            int numRestric;
+            int[] rl=new int[3*MenuPrincipal.Calculos.getNj()];
+            int[] crl=new int[3*MenuPrincipal.Calculos.getNj()];
             for(int i=0;i<MenuPrincipal.Calculos.getNrj();i++){
                 try{
                      restricciones = (String) JOptionPane.showInputDialog("Grupo# "+(i+1)+" \n por favor ingrese de la forma 'numNodo,restriccionX,restriccionY,restriccionZ':");
@@ -309,8 +316,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                 crl[k]=crl[k-1]+rl[k];
             MenuPrincipal.Calculos.setRl(rl);
             MenuPrincipal.Calculos.setCrl(crl);
-        }catch(Exception e){
-            
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
     }//GEN-LAST:event_opcionSecundaria5ActionPerformed
 

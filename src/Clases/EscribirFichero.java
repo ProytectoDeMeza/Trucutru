@@ -8,7 +8,6 @@ public class EscribirFichero extends Estructura{
     public EscribirFichero(int m,int nj,int nr,int nrj,int e){
         super(m,nj,nr,nrj,e);
     }
-
     
     //Metodo para escribir los datos del objeto en un archivo que se recibe como parametro
     public void escribir(File fich){

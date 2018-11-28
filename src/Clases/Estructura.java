@@ -110,6 +110,7 @@ public class Estructura {
         }
     }
     
+    
     //métodos
     //Generación Matriz de rigidez
     public void generarMatrizRigidez(){
