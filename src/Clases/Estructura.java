@@ -306,9 +306,9 @@ public class Estructura {
                 k=j-crl[j];
             ac[k]=a[j]+ae[j];
         }
-        System.arraycopy(ac, 0, d, 0, n-1);
+        System.arraycopy(ac, 0, d, 0,3*nj-1);
         d[0]=d[0]/s[0][0];
-        if(n<=1){
+        if(n==1){
             d[n-1]=d[n-1]/s[n-1][n-1];
             ///////5910
         }
