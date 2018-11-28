@@ -45,12 +45,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         q.add(jLabel2);  
         q.add(jLabel3); 
-        Panel p = new Panel( new GridLayout(5,1) );
+        Panel p = new Panel( new GridLayout(4,1) );
         p.add(opcionPrinc1);
         p.add(opcionPrinc2);
         p.add(opcionPrinc3);
         p.add(opcionPrinc4);
-        p.add(opcionPrinc7);
         add(p,BorderLayout.CENTER); 
         add(q,BorderLayout.NORTH); 
         add(jLabel1,BorderLayout.SOUTH);
@@ -72,9 +71,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
         opcionPrinc4.setIcon(boton);
         
-        imagen= new ImageIcon("src/Imagenes/77.png");
-        boton=new ImageIcon(imagen.getImage().getScaledInstance(460, 52, Image.SCALE_DEFAULT));
-        opcionPrinc7.setIcon(boton);
         // este metodo dimensiona y setea el tamanio exacto
         // necesario para contener todos los componentes del Frame
         
@@ -99,7 +95,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         opcionPrinc2 = new javax.swing.JButton();
         opcionPrinc3 = new javax.swing.JButton();
         opcionPrinc4 = new javax.swing.JButton();
-        opcionPrinc7 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -149,12 +144,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        opcionPrinc7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionPrinc7ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setForeground(new java.awt.Color(153, 51, 0));
         jLabel5.setText("<html>-                    -<p>}"
             + "-                    -<p>");
@@ -200,7 +189,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(192, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(opcionPrinc7)
                     .addComponent(opcionPrinc4)
                     .addComponent(opcionPrinc3)
                     .addComponent(opcionPrinc2)
@@ -238,9 +226,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(opcionPrinc3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(opcionPrinc4)
-                .addGap(79, 79, 79)
-                .addComponent(opcionPrinc7)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -296,9 +282,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             String nom=JOptionPane.showInputDialog("Ingresa el nombre del archivo:");
             nombreProyecto=new File("src/Archivos/"+nom+".txt");
             nombreProyecto.createNewFile();
-            //Calculos.escribir(nombreProyecto);
+            Calculos.escribir(nombreProyecto);
+            jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+            nombreProyecto.delete();
+            nombreProyecto=null;
         }
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -386,8 +375,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         try{
             Calculos.generarMatrizRigidez();
             JOptionPane.showMessageDialog(null, "Se generó la matriz de rigidez con éxito");
-        }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los datos necesarios");
         }
     }//GEN-LAST:event_opcionPrinc2ActionPerformed
 
@@ -396,32 +385,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         try{
             Calculos.calculosFinales();
             new Resultados().setVisible(true);
-        }catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "No han sido llenados los Datos necesarios");
         }
     }//GEN-LAST:event_opcionPrinc4ActionPerformed
 
-    private void opcionPrinc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionPrinc7ActionPerformed
-        // TODO add your handling code here:
-        try{
-            Calculos=null;
-            
-        }catch(Exception e){
-            
-        }
-    }//GEN-LAST:event_opcionPrinc7ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        if(nombreProyecto==null){
-        }
-        {
-            try{
+        try{
+            if(nombreProyecto==null){
+                String nom=JOptionPane.showInputDialog("Ingresa el nombre del archivo:");
+                nombreProyecto=new File("src/Archivos/"+nom+".txt");
+                nombreProyecto.createNewFile();
+                
                 Calculos.escribir(nombreProyecto);
-            }catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+                jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
             }
+            else{
+                try{
+                    Calculos.escribir(nombreProyecto);
+                    jLabel1.setText("<html><p>Nombre de proyecto y directorio: "+nombreProyecto);
+                }catch(Exception e)
+                {
+                    JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+                }
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Los calculos no han sido completados");
+            nombreProyecto.delete();
+            nombreProyecto=null;
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -484,6 +476,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton opcionPrinc2;
     private javax.swing.JButton opcionPrinc3;
     private javax.swing.JButton opcionPrinc4;
-    private javax.swing.JButton opcionPrinc7;
     // End of variables declaration//GEN-END:variables
 }
