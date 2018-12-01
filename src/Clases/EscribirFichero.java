@@ -262,7 +262,7 @@ public class EscribirFichero extends Estructura{
             }
             for(int j=0;j<m;j++){
                 for(int k=0;k<6;k++){
-                    aml[j][k]=vec[((3*nj)*(3*nj))+43+11*nj+7*m+(m*j+k)];
+                    aml[j][k]=vec[((3*nj)*(3*nj))+43+11*nj+7*m+(6*j+k)];
                 }
             }
             for(int j=0;j<3*nj;j++){
@@ -279,7 +279,7 @@ public class EscribirFichero extends Estructura{
             }
             for(int j=0;j<m;j++){
                 for(int k=0;k<6;k++){
-                    am[j][k]=vec[((3*nj)*(3*nj))+43+23*nj+13*m+(m*j+k)];
+                    am[j][k]=vec[((3*nj)*(3*nj))+43+23*nj+13*m+(6*j+k)];
                 }
             }
         }catch(FileNotFoundException e){
