@@ -209,7 +209,10 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             double[] x=new double[MenuPrincipal.Calculos.getNj()];
             double[] y=new double[MenuPrincipal.Calculos.getNj()];
             int pos;
-
+            for(int i=0;i<x.length;i++){
+                x[i]=0;
+                y[i]=0;
+            }
             for(int i=0;i<MenuPrincipal.Calculos.getNj();i++){
                 try{
                      coordenadas = (String) JOptionPane.showInputDialog("Coordenadas del nudo "+(i+1)+" \n por favor ingrese de la forma 'x,y':");
@@ -223,9 +226,9 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                     i--;
                     JOptionPane.showMessageDialog(null, "Error, Ingrese de nuevo porfavor");
                 }
+            }
             MenuPrincipal.Calculos.setX(x);
             MenuPrincipal.Calculos.setY(y);
-            }
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
@@ -237,7 +240,10 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
 
             int[] jj=new int[MenuPrincipal.Calculos.getM()];
             int[] jk=new int[MenuPrincipal.Calculos.getM()];
-
+            for(int i=0;i<jk.length;i++){
+                jj[i]=0;
+                jk[i]=0;
+            }
             for(int i=0;i<MenuPrincipal.Calculos.getM();i++){
                 try{
                      incidencias = (String) JOptionPane.showInputDialog("Incidencias de Miembro "+(i+1)+" \n por favor ingrese de la forma 'nudoInicial,nudoFinal':");
@@ -265,7 +271,10 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             int numElem,ei,ef;
             double[] ax=new double[MenuPrincipal.Calculos.getM()];
             double[] iz=new double[MenuPrincipal.Calculos.getM()];
-            x:
+            for(int i=0;i<ax.length;i++){
+                ax[i]=0;
+                iz[i]=0;
+            }
             numElemTipo=(String) JOptionPane.showInputDialog("¿Cuántos grupos de elementos tipo hay?");
                 numElem = Integer.parseInt(numElemTipo);
             for(int i=0;i<numElem;i++){
@@ -297,6 +306,10 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             int numRestric;
             int[] rl=new int[3*MenuPrincipal.Calculos.getNj()];
             int[] crl=new int[3*MenuPrincipal.Calculos.getNj()];
+            for(int i=0;i<rl.length;i++){
+                rl[i]=0;
+                crl[i]=0;
+            }
             for(int i=0;i<MenuPrincipal.Calculos.getNrj();i++){
                 try{
                      restricciones = (String) JOptionPane.showInputDialog("Grupo# "+(i+1)+" \n por favor ingrese de la forma 'numNodo,restriccionX,restriccionY,restriccionZ':");

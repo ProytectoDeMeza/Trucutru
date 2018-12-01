@@ -59,7 +59,7 @@ public class Estructura {
         setNr(nr);
         setNrj(nrj);
         setE(e);
-        setN(1);
+        setN(3*nj-nr);
         setNlm(1);
         x=new double[nj];
         y=new double[nj];
@@ -141,35 +141,35 @@ public class Estructura {
             j3=3*jj[i]-1;
             k1=(3*jk[i])-3;
             k2=(3*jk[i])-2;
-            k3=3*jk[i];
+            k3=3*jk[i]-1;
             scm1=(e*ax[i])/l[i];
             scm2=(4*e*iz[i])/l[i];
             scm3=(1.5*scm2)/l[i];
             scm4=(2*scm3)/l[i];
             if(rl[j1]==0)
-                j1=j1-crl[j1]-1;
+                j1=j1-crl[j1];
             else
-                j1=n+crl[j1]-1;
+                j1=n+crl[j1];
             if(rl[j2]==0)
-                j2=j2-crl[j2]-1;
+                j2=j2-crl[j2];
             else
-                j2=n+crl[j2]-1;
+                j2=n+crl[j2];
             if(rl[j3]==0)
-                j3=j3-crl[j3]-1;
+                j3=j3-crl[j3];
             else
-                j3=n+crl[j3]-1;
+                j3=n+crl[j3];
             if(rl[k1]==0)
-                k1=k1-crl[k1]-1;
+                k1=k1-crl[k1];
             else
-                k1=n+crl[k1]-1;
+                k1=n+crl[k1];
             if(rl[k2]==0)
-                k2=k2-crl[k2]-1;
+                k2=k2-crl[k2];
             else
-                k2=n+crl[k2]-1;
+                k2=n+crl[k2];
             if(rl[k3]==0)
-                k3=k3-crl[k3]-1;
+                k3=k3-crl[k3];
             else
-                k3=n+crl[k3]-1;
+                k3=n+crl[k3];
             smd[0][0]=(scm1*cx[i]*cx[i])+(scm4*cy[i]*cy[i]);
             smd[3][3]=smd[0][0];
             smd[0][3]=smd[0][0];
@@ -263,7 +263,7 @@ public class Estructura {
                 s[0][i]=s[i][0]/s[0][0];
             for(int j=1;j<n;j++){
                 //imprimir j= valor de j+1
-                im=j-1;
+                im=j;
                 xx=0;
                 for(int k=0;k<im;k++)
                     xx=xx+(s[k][j]*s[k][j]);

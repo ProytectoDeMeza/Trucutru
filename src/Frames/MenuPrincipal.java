@@ -321,13 +321,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     A1=Double.parseDouble(acciones[1]);
                     A2=Double.parseDouble(acciones[2]);
                     A3=Double.parseDouble(acciones[3]);
-                    A[(3*K+1)-3]=A1;
-                    A[(3*K+1)-2]=A2;
-                    A[(3*K+1)-1]=A3;
+                    A[(3*K+1)-4]=A1;
+                    A[(3*K+1)-3]=A2;
+                    A[(3*K+1)-2]=A3;
                 }
                 String text="";
                 for(int j=1;j<=Calculos.getNj();j++){
-                    text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
+                    text+=A[(3*j)-4]+","+A[(3*j)-3]+","+A[(3*j)-2]+"\n";
                 }
                 JOptionPane.showMessageDialog(null, text);
             }
@@ -358,7 +358,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 }
                 String text="";
                 for(int j=1;j<=Calculos.getNj();j++){
-                    text+=A[(3*j)-3]+","+A[(3*j)-2]+","+A[(3*j)-1]+"\n";
+                    text+=A[(3*j)-4]+","+A[(3*j)-3]+","+A[(3*j)-2]+"\n";
                 }
                 JOptionPane.showMessageDialog(null, text);
             }

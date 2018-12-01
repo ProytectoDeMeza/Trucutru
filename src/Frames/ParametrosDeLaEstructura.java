@@ -129,7 +129,7 @@ public class ParametrosDeLaEstructura extends javax.swing.JFrame {
             int nr=Integer.parseInt(jTextField3.getText());
             int nrj=Integer.parseInt(jTextField4.getText());
             int e=Integer.parseInt(jTextField5.getText());
-            if(m==0||nj==0||nr==0||nrj==0||e==0){
+            if(m<=0||nj<=0||nr<=0||nrj<=0||e<=0){
                 Exception ex=new Exception();
                 throw(ex);
             }
