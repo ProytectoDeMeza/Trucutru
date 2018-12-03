@@ -40,7 +40,7 @@ public class Resultados extends javax.swing.JFrame {
         res+="Vector de racciones en apoyos:";
         res+="\n";
         double[] ar=new double[3*MenuPrincipal.Calculos.getNj()];
-        System.arraycopy(MenuPrincipal.Calculos.getAr(),0,ar,0,3*MenuPrincipal.Calculos.getNj()-1);
+        ar=MenuPrincipal.Calculos.getAr();
         for(int i=0;i<ar.length;i++){
             if(i%3==0){
                 res+="\n";

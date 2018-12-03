@@ -321,46 +321,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     A1=Double.parseDouble(acciones[1]);
                     A2=Double.parseDouble(acciones[2]);
                     A3=Double.parseDouble(acciones[3]);
-                    A[(3*K+1)-4]=A1;
-                    A[(3*K+1)-3]=A2;
-                    A[(3*K+1)-2]=A3;
+                    A[(3*K)-3]=A1;
+                    A[(3*K)-2]=A2;
+                    A[(3*K)-1]=A3;
                 }
-                String text="";
-                for(int j=1;j<=Calculos.getNj();j++){
-                    text+=A[(3*j)-4]+","+A[(3*j)-3]+","+A[(3*j)-2]+"\n";
-                }
-                JOptionPane.showMessageDialog(null, text);
             }
             if(NLM>0){
                 for(int j=0;j<NLM;j++){
                     I=0;
                     aux=(String) JOptionPane.showInputDialog("Acciones en los extremos de miembros restringidos debidas a cargas(Ejes Locales)\n Ingresar numero de miembro:");
-
                     I=Integer.parseInt(aux);
-                    aux=(String) JOptionPane.showInputDialog("Acciones de nudo inicial\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
+                    aux=(String) JOptionPane.showInputDialog("Acciones de nudo inicial\n Ingresar de la forma'accionX,accionY,accionZ:");
                     String[] acciones=aux.split(",");
                     AML1=Double.parseDouble(acciones[0]);
                     AML2=Double.parseDouble(acciones[1]);
                     AML3=Double.parseDouble(acciones[2]);
 
-                    aux=(String) JOptionPane.showInputDialog("Acciones de nudo final\n Ingresar de la forma'nudo,accionX,accionY,accionZ:");
+                    aux=(String) JOptionPane.showInputDialog("Acciones de nudo final\n Ingresar de la forma'accionX,accionY,accionZ:");
                     acciones=aux.split(",");
                     AML4=Double.parseDouble(acciones[0]);
                     AML5=Double.parseDouble(acciones[1]);
                     AML6=Double.parseDouble(acciones[2]);
 
-                    AML[I][0]=AML1;
-                    AML[I][1]=AML2;
-                    AML[I][2]=AML3;
-                    AML[I][3]=AML4;
-                    AML[I][4]=AML5;
-                    AML[I][5]=AML6;
+                    AML[I-1][0]=AML1;
+                    AML[I-1][1]=AML2;
+                    AML[I-1][2]=AML3;
+                    AML[I-1][3]=AML4;
+                    AML[I-1][4]=AML5;
+                    AML[I-1][5]=AML6;
                 }
-                String text="";
-                for(int j=1;j<=Calculos.getNj();j++){
-                    text+=A[(3*j)-4]+","+A[(3*j)-3]+","+A[(3*j)-2]+"\n";
-                }
-                JOptionPane.showMessageDialog(null, text);
             }
             Calculos.setA(A);
             Calculos.setAml(AML);

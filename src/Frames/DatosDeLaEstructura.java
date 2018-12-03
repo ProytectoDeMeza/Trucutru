@@ -283,8 +283,8 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                      
                      String[] subElem=elementos.split(",");
                      for(int j=Integer.parseInt(subElem[0])-1;j<Integer.parseInt(subElem[1]);j++){
-                        ax[i]=Double.parseDouble(subElem[2]);
-                        iz[i]=Double.parseDouble(subElem[3]);
+                        ax[j]=Double.parseDouble(subElem[2]);
+                        iz[j]=Double.parseDouble(subElem[3]);
                      }
                      System.out.println(subElem[0]+ " "+subElem[1]+ " "+subElem[2]+ " "+subElem[3]);
                 }catch(Exception e){
@@ -295,7 +295,7 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
             }
             MenuPrincipal.Calculos.setAx(ax);
             MenuPrincipal.Calculos.setIz(iz);
-        }catch(NullPointerException e){
+        }catch(Exception e){
             JOptionPane.showMessageDialog(null, "No han sido llenados los parámetros de la estrucura");
         }
     }//GEN-LAST:event_opcionSecundaria4ActionPerformed
@@ -315,9 +315,9 @@ public class DatosDeLaEstructura extends javax.swing.JFrame {
                      restricciones = (String) JOptionPane.showInputDialog("Grupo# "+(i+1)+" \n por favor ingrese de la forma 'numNodo,restriccionX,restriccionY,restriccionZ':");
                      
                      String[] subRestricc=restricciones.split(",");
-                     rl[3*Integer.parseInt(subRestricc[0])-3]=Integer.parseInt(subRestricc[1]);
-                     rl[3*Integer.parseInt(subRestricc[0])-2]=Integer.parseInt(subRestricc[2]);
-                     rl[3*Integer.parseInt(subRestricc[0])-1]=Integer.parseInt(subRestricc[3]);
+                     rl[(3*Integer.parseInt(subRestricc[0]))-3]=Integer.parseInt(subRestricc[1]);
+                     rl[(3*Integer.parseInt(subRestricc[0]))-2]=Integer.parseInt(subRestricc[2]);
+                     rl[(3*Integer.parseInt(subRestricc[0]))-1]=Integer.parseInt(subRestricc[3]);
                      System.out.println(subRestricc[0]+ " "+subRestricc[1]+ " "+subRestricc[2]+ " "+subRestricc[3]);
                 }catch(Exception e){
                     i--;

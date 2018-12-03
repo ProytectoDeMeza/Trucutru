@@ -59,7 +59,7 @@ public class Estructura {
         setNr(nr);
         setNrj(nrj);
         setE(e);
-        setN(3*nj-nr);
+        setN((3*nj)-nr);
         setNlm(1);
         x=new double[nj];
         y=new double[nj];
@@ -108,6 +108,16 @@ public class Estructura {
                 am[i][j]=0;
             }
         }
+        for(int i=0;i<6;i++){
+            for(int j=0;j<6;j++){
+                smd[i][j]=0;
+            }
+        }
+        for(int i=0;i<3*nj;i++){
+            for(int j=0;j<3*nj;j++){
+                s[i][j]=0;
+            }
+        }
     }
     
     
@@ -129,8 +139,8 @@ public class Estructura {
             }
         }
         for(int i=0;i<m;i++){
-            xcl=x[jk[i]]-x[jj[i]];
-            ycl=y[jk[i]]-y[jj[i]];
+            xcl=x[jk[i]-1]-x[jj[i]-1];
+            ycl=y[jk[i]-1]-y[jj[i]-1];
             l[i]=Math.sqrt((xcl*xcl)+(ycl*ycl));
             cx[i]=xcl/l[i];
             cy[i]=ycl/l[i];
@@ -138,10 +148,10 @@ public class Estructura {
         for(int i=0;i<m;i++){
             j1=(3*jj[i])-3;
             j2=(3*jj[i])-2;
-            j3=3*jj[i]-1;
+            j3=(3*jj[i])-1;
             k1=(3*jk[i])-3;
             k2=(3*jk[i])-2;
-            k3=3*jk[i]-1;
+            k3=(3*jk[i])-1;
             scm1=(e*ax[i])/l[i];
             scm2=(4*e*iz[i])/l[i];
             scm3=(1.5*scm2)/l[i];
@@ -149,27 +159,27 @@ public class Estructura {
             if(rl[j1]==0)
                 j1=j1-crl[j1];
             else
-                j1=n+crl[j1];
+                j1=n+crl[j1]-1;
             if(rl[j2]==0)
                 j2=j2-crl[j2];
             else
-                j2=n+crl[j2];
+                j2=n+crl[j2]-1;
             if(rl[j3]==0)
                 j3=j3-crl[j3];
             else
-                j3=n+crl[j3];
+                j3=n+crl[j3]-1;
             if(rl[k1]==0)
                 k1=k1-crl[k1];
             else
-                k1=n+crl[k1];
+                k1=n+crl[k1]-1;
             if(rl[k2]==0)
                 k2=k2-crl[k2];
             else
-                k2=n+crl[k2];
+                k2=n+crl[k2]-1;
             if(rl[k3]==0)
                 k3=k3-crl[k3];
             else
-                k3=n+crl[k3];
+                k3=n+crl[k3]-1;
             smd[0][0]=(scm1*cx[i]*cx[i])+(scm4*cy[i]*cy[i]);
             smd[3][3]=smd[0][0];
             smd[0][3]=smd[0][0];
@@ -182,7 +192,7 @@ public class Estructura {
             smd[0][4]=smd[0][1];
             smd[1][3]=smd[0][1];
             smd[3][1]=smd[0][1];
-            smd[0][2]=-scm3*cy[i];
+            smd[0][2]=(-scm3)*cy[i];
             smd[2][0]=smd[0][2];
             smd[0][5]=smd[0][2];
             smd[5][0]=smd[0][2];
@@ -207,7 +217,7 @@ public class Estructura {
             smd[2][5]=scm2/2;
             smd[5][2]=smd[2][5];
             //imprimir: "Miembro #"+i/////////////////////
-            if(rl[3*jj[i]-3]==0){
+            if(rl[(3*jj[i])-3]==0){
                 s[j1][j1]=s[j1][j1]+smd[0][0];
                 s[j2][j1]=s[j2][j1]+smd[1][0];
                 s[j3][j1]=s[j3][j1]+smd[2][0];
@@ -216,7 +226,7 @@ public class Estructura {
                 s[k3][j1]=smd[5][0];
             }
             //linea 3140
-            if(rl[3*jj[i]-2]==0){
+            if(rl[(3*jj[i])-2]==0){
                 s[j1][j2]=s[j1][j2]+smd[0][1];
                 s[j2][j2]=s[j2][j2]+smd[1][1];
                 s[j3][j2]=s[j3][j2]+smd[2][1];
@@ -224,7 +234,7 @@ public class Estructura {
                 s[k2][j2]=smd[4][1];
                 s[k3][j2]=smd[5][1];
             }
-            if(rl[3*jj[i]-1]==0){
+            if(rl[(3*jj[i])-1]==0){
                 s[j1][j3]=s[j1][j3]+smd[0][2];
                 s[j2][j3]=s[j2][j3]+smd[1][2];
                 s[j3][j3]=s[j3][j3]+smd[2][2];
@@ -232,29 +242,29 @@ public class Estructura {
                 s[k2][j3]=smd[4][2];
                 s[k3][j3]=smd[5][2];
             }
-            if(rl[3*jk[i]-3]==0){
-                s[k1][k1]=s[k1][k1]+smd[0][3];
-                s[k2][k1]=s[k2][k1]+smd[1][3];
-                s[k3][k1]=s[k3][k1]+smd[2][3];
-                s[j1][k1]=smd[3][3];
-                s[j2][k1]=smd[4][3];
-                s[j3][k1]=smd[5][3];
+            if(rl[(3*jk[i])-3]==0){
+                s[k1][k1]=s[k1][k1]+smd[3][3];
+                s[k2][k1]=s[k2][k1]+smd[4][3];
+                s[k3][k1]=s[k3][k1]+smd[5][3];
+                s[j1][k1]=smd[0][3];
+                s[j2][k1]=smd[1][3];
+                s[j3][k1]=smd[2][3];
             }
             if(rl[3*jk[i]-2]==0){
-                s[k1][k2]=s[k1][k2]+smd[0][4];
-                s[k2][k2]=s[k2][k2]+smd[1][4];
-                s[k3][k2]=s[k3][k2]+smd[2][4];
-                s[j1][k2]=smd[3][4];
-                s[j2][k2]=smd[4][4];
-                s[j3][k2]=smd[5][4];
+                s[k1][k2]=s[k1][k2]+smd[3][4];
+                s[k2][k2]=s[k2][k2]+smd[4][4];
+                s[k3][k2]=s[k3][k2]+smd[5][4];
+                s[j1][k2]=smd[0][4];
+                s[j2][k2]=smd[1][4];
+                s[j3][k2]=smd[2][4];
             }
             if(rl[3*jk[i]-1]==0){
-                s[k1][k3]=s[k1][k3]+smd[0][5];
-                s[k2][k3]=s[k2][k3]+smd[1][5];
-                s[k3][k3]=s[k3][k3]+smd[2][5];
-                s[j1][k3]=smd[3][5];
-                s[j2][k3]=smd[4][5];
-                s[j3][k3]=smd[5][5];
+                s[k1][k3]=s[k1][k3]+smd[3][5];
+                s[k2][k3]=s[k2][k3]+smd[4][5];
+                s[k3][k3]=s[k3][k3]+smd[5][5];
+                s[j1][k3]=smd[0][5];
+                s[j2][k3]=smd[1][5];
+                s[j3][k3]=smd[2][5];
             }
         }
         s[0][0]=Math.sqrt(s[0][0]);
@@ -263,7 +273,7 @@ public class Estructura {
                 s[0][i]=s[i][0]/s[0][0];
             for(int j=1;j<n;j++){
                 //imprimir j= valor de j+1
-                im=j;
+                im=j-1;
                 xx=0;
                 for(int k=0;k<im;k++)
                     xx=xx+(s[k][j]*s[k][j]);
@@ -301,12 +311,12 @@ public class Estructura {
         }
         for(j=0;j<n+nr;j++){
             if(rl[j]!=0)
-                k=n+crl[j];
+                k=n+crl[j]-1;
             else
                 k=j-crl[j];
             ac[k]=a[j]+ae[j];
         }
-        System.arraycopy(ac, 0, d, 0,3*nj-1);
+        System.arraycopy(ac, 0, d, 0,n-1);
         d[0]=d[0]/s[0][0];
         if(n==1){
             d[n-1]=d[n-1]/s[n-1][n-1];
@@ -314,15 +324,14 @@ public class Estructura {
         }
         else{
             for(i=1;i<n;i++){
-                im=i-1;
                 xx=0;
-                for(k=0;k<=im;k++)
+                for(k=0;k<i;k++)
                     xx=xx+s[k][i]*d[k];
                 d[i]=(d[i]-xx)/s[i][i];
             }
             d[n-1]=d[n-1]/s[n-1][n-1];
             np=n+1;
-            for(int mm=1;mm<np;mm++){
+            for(int mm=1;mm<n;mm++){
                 i=np-mm-1;
                 im=i+1;
                 xx=0;
@@ -331,10 +340,10 @@ public class Estructura {
                 d[i]=(d[i]-xx)/s[i][i];
             }
         }
-        for(k=n;k<n+nr;k++){
+        for(k=n-1;k<n+nr;k++){
             ar[k]=-ac[k];
             for(j=0;j<n;j++)
-                ar[k]=ar[k]+s[k][j]*d[j];
+                ar[k]=ar[k]+(s[k][j]*d[j]);
         }   
         j=n+1;
         for(ja=1;ja<=n+nr;ja++){
@@ -344,14 +353,14 @@ public class Estructura {
             else{
                 j=j-2;
                 d[je]=d[j];
+                j++;
             }
         }
-        k=n-1;
+        k=n;
         for(int ke=0;ke<n+nr;ke++){
             if(rl[ke]!=1)
                 ar[ke]=0;
             else{
-                k=k+1;
                 ar[ke]=ar[k];
             }
         }
@@ -362,16 +371,16 @@ public class Estructura {
             j3=3*jj[i]-1;
             k1=(3*jk[i])-3;
             k2=(3*jk[i])-2;
-            k3=3*jk[i];
+            k3=3*jk[i]-1;
             scm1=(e*ax[i])/l[i];
             scm2=(4*e*iz[i])/l[i];
             scm3=(1.5*scm2)/l[i];
             scm4=(2*scm3)/l[i];
             am[i][0]=aml[i][0]+scm1*((d[j1]-d[k1])*cx[i]+(d[j2]-d[k2])*cy[i]);
-            am[i][1]=aml[i][1]+scm4*(-(d[j1]-d[k1])*cy[i]+(d[j2]-d[k2])*cx[i])+scm3*(d[j3]+d[k3]);
+            am[i][1]=aml[i][1]+scm4*((-(d[j1]-d[k1]))*cy[i]+(d[j2]-d[k2])*cx[i])+scm3*(d[j3]+d[k3]);
             am[i][2]=aml[i][2]+scm3*(-(d[j1]-d[k1])*cy[i]+(d[j2]-d[k2])*cx[i])+scm2*(d[j3]+d[k3]/2);
-            am[i][3]=aml[i][3]+scm1*(-(d[j1]-d[k1])*cx[i]+(d[j2]-d[k2])*cy[i]);
-            am[i][4]=aml[i][4]+scm4*((d[j1]-d[k1])*cy[i]+(d[j2]-d[k2])*cx[i])+scm3*(d[j3]+d[k3]);
+            am[i][3]=aml[i][3]+scm1*(-(d[j1]-d[k1])*cx[i]-(d[j2]-d[k2])*cy[i]);
+            am[i][4]=aml[i][4]+scm4*((d[j1]-d[k1])*cy[i]-(d[j2]-d[k2])*cx[i])-scm3*(d[j3]+d[k3]);
             am[i][5]=aml[i][5]+scm3*(-(d[j1]-d[k1])*cy[i]+(d[j2]-d[k2])*cx[i])+scm2*(d[j3]/2+d[k3]);
         }
     }
